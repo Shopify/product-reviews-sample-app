@@ -1,0 +1,20 @@
+{% assign fillColor = fill %}
+
+<div class="prapp-stars">
+  {% for i in (1..5) %}
+    {% assign half = i | minus: 0.5 %}
+    {% if rating >= i %}
+      <svg class="prapp-star" style="width: {{ size }}px; height: {{ size }}px;" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 512 512" xml:space="preserve">
+        <path fill="{{ fillColor }}" d="M512,197.816L325.961 185.585 255.898 9.569 185.835 185.585 0 197.816 142.534 318.842 95.762 502.431 255.898 401.21 416.035 502.431 369.263 318.842z"></path>
+      </svg>
+    {% elsif rating >= half %}
+      <svg class="prapp-star" style="width: {{ size }}px; height: {{ size }}px;" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="510px" height="510px" viewBox="0 0 510 510" style="enable-background:new 0 0 510 510;" xml:space="preserve">
+        <path fill="{{ fillColor }}" d="M510,197.472l-183.37-15.734L255,12.75l-71.629,168.988L0,197.472l0,0l0,0l139.103,120.539L97.41,497.25L255,402.186l0,0l157.59,95.039l-41.692-179.239L510,197.472z M255,354.348V117.172l43.605,102.918l111.689,9.588l-84.711,73.389l25.398,109.166L255,354.348z"/>
+      </svg>
+    {% else %}
+      <svg class="prapp-star" style="width: {{ size }}px; height: {{ size }}px;" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 512 512" xml:space="preserve">
+        <path fill="{{ fillColor }} "d="M512,197.819l-185.933-12.228L256,9.571l-70.067,176.021L0,197.82l142.658,120.93L95.856,502.429L256,401.214 l160.144,101.215l-46.8-183.671L512,197.819z M256,365.724l-112.464,71.08l32.827-128.831L75.829,222.888l130.971-8.603 L256,90.687l49.2,123.599l131.124,8.602l-100.689,85.077l32.829,128.839L256,365.724z" />
+      </svg>
+    {% endif %}
+  {% endfor %}
+</div>

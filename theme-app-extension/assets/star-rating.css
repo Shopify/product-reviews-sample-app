@@ -1,0 +1,7 @@
+.prapp-stars {
+  display: flex;
+}
+
+.prapp-star + .prapp-star {
+  margin-left: 4px;
+}

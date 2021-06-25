@@ -1,0 +1,12 @@
+.Wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.StarIcon {
+  display: inline-block;
+}
+
+.TextValue {
+  margin: 2px 4px 0;
+}

@@ -1,0 +1,16 @@
+.EmptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0 40px;
+}
+
+.SearchIcon > span {
+  width: 30px;
+  height: 30px;
+  margin: 8px 0;
+}
+
+.NoResultsText {
+  margin: 8px 0;
+}

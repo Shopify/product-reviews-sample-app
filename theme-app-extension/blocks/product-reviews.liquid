@@ -1,0 +1,110 @@
+{{ 'style.css' | asset_url | stylesheet_tag }}
+{{ 'star-rating.css' | asset_url | stylesheet_tag }}
+
+{% assign avg_rating = block.settings.product.metafields.prapp.avg_rating | plus: 0 %}
+{% assign reviews = block.settings.product.metafields.prapp-pub-reviews %}
+
+<div class="prapp-block" style="padding: {{ block.settings.padding_y }}px {{ block.settings.padding_x }}px;" data-product-id="{{ block.settings.product.id }}">
+  <div class="prapp-summary">
+    <div class="prapp-summary__header">
+      <h2 class="prapp-summary__headline">{{ block.settings.heading }}</h2>
+      {% if block.settings.allow_unverified_reviews %}
+        {% if avg_rating > 0 %}
+          <button type="button" class="prapp-summary__write-review">{{ block.settings.existing_reviews_action_text }}</button>
+        {% else %}
+          <button type="button" class="prapp-summary__write-review">{{ block.settings.no_reviews_action_text }}</button>
+        {% endif %}
+      {% endif %}
+    </div>
+  </div>
+  {% if reviews != blank %}
+    <div class="prapp-review">
+      <ul class="prapp-review__list">
+        {% for key_value in reviews %}
+          {% assign review = key_value[1] %}
+          <li class="prapp-review__list-item">
+            {% assign rating = review.rating | plus: 0 %}
+            {% render "star-rating", rating: rating, fill: block.settings.stars_fill_color, size: block.settings.star_size %}
+            <h3 class="prapp-review__list-item-meta-headline">{{ review.title }}</h3>
+            <div>
+              <p>{{ review.body }}</p>
+            </div>
+            <div class="prapp-review__list-item-meta">
+              <p>
+                <b>{{ review.name }}</b>
+                on
+                <b>{{ review.created_at | date: "%b %d, %Y" }}</b>
+              </p>
+            </div>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endif %}
+</div>
+
+{{ 'product-reviews-form.js' | asset_url | script_tag }}
+
+{% schema %}
+{
+  "name": "Product Reviews",
+  "templates": ["product"],
+  "target": "section",
+  "settings": [
+    {
+      "type": "color",
+      "id": "stars_fill_color",
+      "label": "Stars color",
+      "default": "#000000"
+    },
+    {
+      "type": "number",
+      "id": "star_size",
+      "label": "Star size",
+      "default": 24
+    },
+    {
+      "type": "number",
+      "id": "padding_x",
+      "label": "Horizontal spacing",
+      "default": 50
+    },
+    {
+      "type": "number",
+      "id": "padding_y",
+      "label": "Vertical spacing",
+      "default": 0
+    },
+    {
+      "id": "heading",
+      "type": "text",
+      "label": "Heading",
+      "default": "Customer Reviews"
+    },
+	  {
+      "id": "no_reviews_action_text",
+      "type": "text",
+      "label": "Call to action text when there are no reviews",
+      "default": "Be the first to review this product."
+    },
+	  {
+      "id": "existing_reviews_action_text",
+      "type": "text",
+      "label": "Call to action text when the product has reviews",
+      "default": "Write Review"
+    },
+    {
+      "id": "allow_unverified_reviews",
+      "type": "checkbox",
+      "label": "Allow unverified review submissions",
+      "default": false
+    },
+    {
+      "id": "product",
+      "type": "product",
+      "label": "Product",
+      "autofill": true
+    }
+  ]
+}
+{% endschema %}

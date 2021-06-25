@@ -1,0 +1,42 @@
+.prapp-summary {
+  padding: 16px 0;
+}
+
+.prapp-summary__headline {
+  margin-bottom: 0;
+  padding-bottom: 12px;
+}
+
+.prapp-summary__form {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  margin-top: 12px;
+}
+
+.prapp-summary__form .field {
+  margin-bottom: 16px;
+}
+
+.prapp-review .prapp-review__list {
+  list-style: none;
+  padding-inline: 0;
+  margin: 0;
+}
+
+.prapp-review .prapp-review__list-item {
+  padding: 16px 0px;
+  border-top: 1px solid #ececec;
+}
+
+.prapp-review .prapp-review__list-item-meta-headline {
+  margin: 8px 0;
+}
+
+.prapp-summary__write-review {
+  border: 0;
+  background: transparent;
+  padding: 0;
+  text-decoration: underline;
+  vertical-align: text-bottom;
+}

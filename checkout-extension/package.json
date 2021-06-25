@@ -1,0 +1,28 @@
+{
+  "name": "product-reviews-sample-checkout-extension",
+  "version": "0.1.0",
+  "engines": {
+    "node": ">=10.16.0"
+  },
+  "author": "Shopify Inc.",
+  "license": "MIT",
+  "devDependencies": {
+    "@shopify/checkout-ui-extensions-run": "^0.4.1",
+    "eslint": "^7.19.0",
+    "eslint-config-prettier": "^7.2.0",
+    "eslint-plugin-prettier": "^3.3.0",
+    "eslint-plugin-react": "^7.22.0",
+    "prettier": "^2.1.2"
+  },
+  "scripts": {
+    "build": "checkout-ui-extensions-run build",
+    "server": "npm run start",
+    "start": "checkout-ui-extensions-run serve --port 39351",
+    "lint": "eslint 'src/**'"
+  },
+  "dependencies": {
+    "@shopify/post-purchase-ui-extensions": "^0.9.3",
+    "@shopify/post-purchase-ui-extensions-react": "^0.9.5",
+    "react": "^17.0.0"
+  }
+}

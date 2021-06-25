@@ -1,0 +1,14 @@
+.Title {
+  width: 200px;
+}
+
+.Body {
+  display: flex;
+  margin: 20px 0 0;
+  align-items: center;
+}
+
+.Text {
+  width: 150px;
+  margin-left: 20px;
+}
