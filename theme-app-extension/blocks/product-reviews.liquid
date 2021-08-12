@@ -43,7 +43,7 @@
   {% endif %}
 </div>
 
-{{ 'product-reviews-form.js' | asset_url | script_tag }}
+<script src="{{ 'product-reviews-form.js' | asset_url }}" defer></script>
 
 {% schema %}
 {
