@@ -12,15 +12,15 @@ import { addReview, createClient, getFirstPublishedProduct } from "./handlers";
 import {
   containsAppBlock,
   verifyAppProxyExtensionSignature,
-  verifyPostPurchaseToken,
+  verifyPostPurchaseToken
 } from "./utilities";
 import { enqueueProductUpdateJob } from "./jobs/product-update";
 
 dotenv.config();
-const port = parseInt(process.env.PORT, 10) || 8081;
+const port = parseInt(process.env.PORT, 10) || 3000;
 const dev = process.env.NODE_ENV !== "production";
 const app = next({
-  dev,
+  dev
 });
 const handle = app.getRequestHandler();
 
@@ -34,7 +34,7 @@ Shopify.Context.initialize({
   API_VERSION: ApiVersion.October20,
   IS_EMBEDDED_APP: true,
   // This should be replaced with your preferred storage strategy
-  SESSION_STORAGE: new Shopify.Session.MemorySessionStorage(),
+  SESSION_STORAGE: new Shopify.Session.MemorySessionStorage()
 });
 
 // Storing the currently active shops in memory will force them to re-login when your server restarts. You should
@@ -64,7 +64,7 @@ app.prepare().then(async () => {
         ctx.redirect(
           `https://${shop}/admin/apps/${process.env.SHOPIFY_API_KEY}`
         );
-      },
+      }
     })
   );
 
@@ -87,7 +87,7 @@ app.prepare().then(async () => {
           path: "/webhooks",
           topic: "APP_UNINSTALLED",
           webhookHandler: async (topic, shop, body) =>
-            delete ACTIVE_SHOPIFY_SHOPS[shop],
+            delete ACTIVE_SHOPIFY_SHOPS[shop]
         });
 
         if (!response.success) {
@@ -103,7 +103,7 @@ app.prepare().then(async () => {
           topic: "PRODUCTS_UPDATE",
           webhookHandler: async (topic, shop, body) => {
             enqueueProductUpdateJob(shop, JSON.parse(body));
-          },
+          }
         });
 
         if (!response.success) {
@@ -115,7 +115,7 @@ app.prepare().then(async () => {
         // Redirect to online auth entry point to create
         // an online access mode token that will be used by the embedded app
         ctx.redirect(`/online/auth/?shop=${shop}`);
-      },
+      }
     })
   );
 
@@ -232,7 +232,7 @@ app.prepare().then(async () => {
       const session = await Shopify.Utils.loadCurrentSession(ctx.req, ctx.res);
       const clients = {
         rest: new Shopify.Clients.Rest(session.shop, session.accessToken),
-        graphQL: createClient(session.shop, session.accessToken),
+        graphQL: createClient(session.shop, session.accessToken)
       };
 
       // Check if App Blocks are supported
@@ -243,9 +243,9 @@ app.prepare().then(async () => {
 
       // Use `client.get` to request list of themes on store
       const {
-        body: { themes },
+        body: { themes }
       } = await clients.rest.get({
-        path: "themes",
+        path: "themes"
       });
 
       // Find the published theme
@@ -253,9 +253,9 @@ app.prepare().then(async () => {
 
       // Get list of assets contained within the published theme
       const {
-        body: { assets },
+        body: { assets }
       } = await clients.rest.get({
-        path: `themes/${publishedTheme.id}/assets`,
+        path: `themes/${publishedTheme.id}/assets`
       });
 
       // Check if template JSON files exist for the template specified in APP_BLOCK_TEMPLATES
@@ -269,10 +269,10 @@ app.prepare().then(async () => {
       const templateJSONAssetContents = await Promise.all(
         templateJSONFiles.map(async (file) => {
           const {
-            body: { asset },
+            body: { asset }
           } = await clients.rest.get({
             path: `themes/${publishedTheme.id}/assets`,
-            query: { "asset[key]": file.key },
+            query: { "asset[key]": file.key }
           });
 
           return asset;
@@ -296,10 +296,10 @@ app.prepare().then(async () => {
           templateMainSections.map(async (file, index) => {
             let acceptsAppBlock = false;
             const {
-              body: { asset },
+              body: { asset }
             } = await clients.rest.get({
               path: `themes/${publishedTheme.id}/assets`,
-              query: { "asset[key]": file.key },
+              query: { "asset[key]": file.key }
             });
 
             const match = asset.value.match(
@@ -350,7 +350,7 @@ app.prepare().then(async () => {
           "product-reviews",
           process.env.THEME_APP_EXTENSION_UUID
         ),
-        editorUrl,
+        editorUrl
       };
       ctx.res.statusCode = 200;
     }
@@ -361,8 +361,8 @@ app.prepare().then(async () => {
   router.all(
     "(/api/post-purchase/.*)",
     cors({
-      origin: "https://shopify-argo-internal.com",
-      allowMethods: ["POST"],
+      origin: "https://x83of.sse.codesandbox.io",
+      allowMethods: ["POST"]
     })
   );
 
@@ -387,8 +387,8 @@ app.prepare().then(async () => {
           `https://${shop}/admin/api/2021-04/products/${productId}.json`,
           {
             headers: {
-              "X-Shopify-Access-Token": session.accessToken,
-            },
+              "X-Shopify-Access-Token": session.accessToken
+            }
           }
         );
         const { product } = await apiResponse.json();
@@ -396,7 +396,7 @@ app.prepare().then(async () => {
           productId: product.id,
           productTitle: product.title,
           productImageURL: product.images[0].src,
-          productDescription: product.body_html.split(/<br.*?>/),
+          productDescription: product.body_html.split(/<br.*?>/)
         });
         ctx.res.statusCode = 200;
       } catch (err) {
