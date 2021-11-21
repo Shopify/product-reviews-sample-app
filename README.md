@@ -1,4 +1,4 @@
-# Product Reviews Sample App FOO
+# Product Reviews Sample App
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE.md)
 
