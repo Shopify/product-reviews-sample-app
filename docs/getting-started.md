@@ -39,7 +39,7 @@ In the terminal, complete the following steps:
 
 - Run `shopify login` (optionally pass in the `--shop=YOUR_SHOP` flag to specify your test store)
 - Open the printed url in the browser to authenticate.
-- Next, run `shopify node connect` to connect to the newly created app. You will be prompted to answer the following questions:
+- Next, run `shopify app connect` to connect to the newly created app. You will be prompted to answer the following questions:
   - `To which app does this project belong?` (Select the app you just created in your partner account dashboard).
   - `Which development store would you like to use?` (This will only appear if you did not use the `--shop` flag above).
 
@@ -47,7 +47,7 @@ This step automatically creates a `.env` file in the project root, with `SHOPIFY
 
 ## Start the server
 
-Start the server by running `shopify node serve`, and answer the prompts:
+Start the server by running `shopify app serve`, and answer the prompts:
 
 - `Do you want to convert <your-store>.myshopify.com to a development store?`
   This allows you to install a draft app in your test store.
@@ -70,7 +70,7 @@ And then click "Save".
 
 ## Install the app in your test store
 
-Go back to the terminal and you will see that there was a url printed after you ran `shopify node serve`. Visit this url, where you will be prompted to install the app on your test store.
+Go back to the terminal and you will see that there was a url printed after you ran `shopify app serve`. Visit this url, where you will be prompted to install the app on your test store.
 
 Before you start building your app, you'll need to perform the steps below.
 
