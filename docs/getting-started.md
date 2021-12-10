@@ -39,7 +39,7 @@ In the terminal, complete the following steps:
 
 - Run `shopify login` (optionally pass in the `--shop=YOUR_SHOP` flag to specify your test store)
 - Open the printed url in the browser to authenticate.
-- Next, run `shopify node connect` to connect to the newly created app. You will be prompted to answer the following questions:
+- Next, run `shopify app connect` to connect to the newly created app. You will be prompted to answer the following questions:
   - `To which app does this project belong?` (Select the app you just created in your partner account dashboard).
   - `Which development store would you like to use?` (This will only appear if you did not use the `--shop` flag above).
 
