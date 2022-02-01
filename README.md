@@ -10,7 +10,7 @@ It makes use of Metafields as a way to store the reviews, which means it require
 
 The app is comprised of the following elements:
 
-1. An **embedded node app** with displays an admin UI for managing product reviews (publishing, unpublishing, deleting, etc)
+1. An **embedded node app** which displays an admin UI for managing product reviews (publishing, unpublishing, deleting, etc)
 2. A **theme app extension** which enables a merchant to include review information on their storefront, using **App Blocks**. Including:
    - Detailed product reviews per product, including a form where customers can submit new reviews.
    - An overall product rating, calculated using the average of all published reviews.
