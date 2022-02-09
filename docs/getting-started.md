@@ -115,7 +115,7 @@ To configure the App Proxy extension follow the steps below.
 
 - Follow the steps listed in [Display dynamic store data with app proxies - Add an app proxy](https://shopify.dev/tutorials/display-dynamic-store-data-with-app-proxies#add-an-app-proxy).
 - Set the Sub path field to `prapp`.
-- Set the Proxy Url field to `{YOUR_TUNNEL_URL/api}`.
+- Set the Proxy URL field to `{YOUR_TUNNEL_URL/api}`.
 - Click `Save`.
 
 ## Verify if the embedded app is running
@@ -181,12 +181,12 @@ cd checkout-extension && touch .env
 Add the following environment variables to the `.env` to connect the extension to your app:
 
 ```
- # Your app's API Key. You can find this in your partner dashboard
-  SHOPIFY_API_KEY=1234
-  # Your app's API. Secret You can find this in your partner dashboard
-  SHOPIFY_API_SECRET=abcdefg
-  # This can be whatever you want
-  EXTENSION_TITLE=my-checkout-extension
+# Your app's API Key. You can find this in your partner dashboard
+SHOPIFY_API_KEY=1234
+# Your app's API. Secret You can find this in your partner dashboard
+SHOPIFY_API_SECRET=abcdefg
+# This can be whatever you want
+EXTENSION_TITLE=my-checkout-extension
 ```
 
 Install the command line tool
