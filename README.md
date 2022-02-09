@@ -10,7 +10,7 @@ It makes use of Metafields as a way to store the reviews, which means it require
 
 The app is comprised of the following elements:
 
-1. An **embedded node app** with displays an admin UI for managing product reviews (publishing, unpublishing, deleting, etc)
+1. An **embedded node app** which displays an admin UI for managing product reviews (publishing, unpublishing, deleting, etc)
 2. A **theme app extension** which enables a merchant to include review information on their storefront, using **App Blocks**. Including:
    - Detailed product reviews per product, including a form where customers can submit new reviews.
    - An overall product rating, calculated using the average of all published reviews.
@@ -18,7 +18,7 @@ The app is comprised of the following elements:
 
 ## Limitations
 
-We've developed this app to inspire the next generation of apps developed for Shopify merchants. When learning from this code, keep in mind:
+We've created this app to inspire the next generation of apps developed for Shopify merchants. When learning from this code, keep in mind:
 
 1. This is a sample app, not a production ready app.
 2. Metafields are going to be a much bigger part of the platform and will support building production apps with a lot of data. For now, we recommend metafields for simpler data for apps.
