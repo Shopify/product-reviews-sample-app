@@ -18,7 +18,7 @@ The app is comprised of the following elements:
 
 ## Limitations
 
-We've developed this app to to inspire the next generation of apps developed for Shopify merchants. When learning from this code, keep in mind:
+We've developed this app to inspire the next generation of apps developed for Shopify merchants. When learning from this code, keep in mind:
 
 1. This is a sample app, not a production ready app.
 2. Metafields are going to be a much bigger part of the platform and will support building production apps with a lot of data. For now, we recommend metafields for simpler data for apps.
@@ -34,7 +34,7 @@ We've developed this app to to inspire the next generation of apps developed for
 
 ## Getting started
 
-You can follow our [getting started guide](docs/getting-started.md), which will provide instructions on how to to setup and run the Product Reviews sample application.
+You can follow our [getting started guide](docs/getting-started.md), which will provide instructions on how to setup and run the Product Reviews sample application.
 
 - [Getting started](docs/getting-started.md)
 
