@@ -34,7 +34,7 @@ We've created this app to inspire the next generation of apps developed for Shop
 
 ## Getting started
 
-You can follow our [getting started guide](docs/getting-started.md), which will provide instructions on how to to setup and run the Product Reviews sample application.
+You can follow our [getting started guide](docs/getting-started.md), which will provide instructions on how to setup and run the Product Reviews sample application.
 
 - [Getting started](docs/getting-started.md)
 
