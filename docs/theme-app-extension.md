@@ -9,12 +9,14 @@ To create Theme App Extension follow these steps below.
 ## Table of contents
 
 - [Theme App Extension](#theme-app-extension)
-	- [Authenticate](#authenticate)
-	- [Create an extension](#create-an-extension)
-	- [Register an extension](#register-an-extension)
-	- [Push the extension](#push-the-extension)
-	- [Publish](#publish)
-	- [Common errors](#common-errors)
+  - [Table of contents](#table-of-contents)
+  - [Authenticate](#authenticate)
+  - [Create an extension](#create-an-extension)
+  - [Register an extension](#register-an-extension)
+  - [Push the extension](#push-the-extension)
+  - [Publish](#publish)
+  - [Common errors](#common-errors)
+  - [FAQ](#faq)
 
 ## Authenticate
 
@@ -75,3 +77,17 @@ Then in the html template code portion you'll find the `{%- for block in section
 ```
 
 You should then see your blocks in theme editor under product page product section and if you'll select one of the blocks it will appear in sidepannel where Name, Price and other info about the product is present.
+
+## FAQ
+
+Q: I can't see my app blocks in my Theme Editor.
+
+A: After you use the CLI command `shopify extension push` you must go to the extension page in the partner dashboard. Create a new version of the extension. Publish the version, to push it live to merchants.
+
+Q: I added the product reviews block but the I cannot see the add reviews form.
+
+A: In the App Block settings in the Theme Editor ensure `Allow unverified review submissions` is selected.
+
+Q: I cannot see the average review block
+
+A: The average review block will appear once at least one review has been submitted and approved. You must approve the review in the app admin.
