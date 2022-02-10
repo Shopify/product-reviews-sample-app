@@ -236,7 +236,12 @@ export function App() {
             <TextBlock size="large">
               Aren’t those new delivery drones awesome?
             </TextBlock>
-            <Image description="product photo" source={data.productImageURL} />
+            {data.productImageURL.length !== 0 && (
+              <Image
+                description="product photo"
+                source={data.productImageURL}
+              />
+            )}
           </BlockStack>
         </View>
         <Form>
