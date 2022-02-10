@@ -31,7 +31,7 @@ Shopify.Context.initialize({
     ? process.env.SCOPES.split(",")
     : "write_products,write_customers,write_draft_orders,read_themes",
   HOST_NAME: process.env.HOST.replace(/https:\/\//, ""),
-  API_VERSION: ApiVersion.October20,
+  API_VERSION: ApiVersion.January21,
   IS_EMBEDDED_APP: true,
   // This should be replaced with your preferred storage strategy
   SESSION_STORAGE: new Shopify.Session.MemorySessionStorage(),
@@ -392,10 +392,14 @@ app.prepare().then(async () => {
           }
         );
         const { product } = await apiResponse.json();
+        const productImageURL =
+          product.images === undefined || product.images.length === 0
+            ? ""
+            : product.images[0].src;
         ctx.body = JSON.stringify({
           productId: product.id,
           productTitle: product.title,
-          productImageURL: product.images[0].src,
+          productImageURL: productImageURL,
           productDescription: product.body_html.split(/<br.*?>/),
         });
         ctx.res.statusCode = 200;
