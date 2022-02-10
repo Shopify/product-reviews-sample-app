@@ -82,7 +82,7 @@ You should then see your blocks in theme editor under product page product secti
 
 Q: I can't see my app blocks in my Theme Editor.
 
-A: After you use the CLI command `Shopify extension push` you must go to the extension page in the partner dashboard. Create a new version of the extension. Publish the version, to push it live to merchants.
+A: After you use the CLI command `shopify extension push` you must go to the extension page in the partner dashboard. Create a new version of the extension. Publish the version, to push it live to merchants.
 
 Q: I added the product reviews block but the I cannot see the add reviews form.
 
