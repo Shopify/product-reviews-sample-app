@@ -66,7 +66,7 @@ You will be prompted to answer the following questions:
 - `To which app does this project belong?` (Select the app you just created in your partner account dashboard).
 - `Which development store would you like to use?` (This will only appear if you did not use the `--shop` flag above).
 
-This step automatically creates a `.env` file in the project root, with `SHOPIFY_API_KEY`, `SHOPIFY_API_SECRET`, `SHOP` and `SCOPES` values. The `SHOPIFY_API_KEY` and `SHOPIFY_API_SECRET` can also be found in your app settings in your Partner account. `SCOPES` are set to default values. See [here](https://shopify.dev/docs/admin-api/access-scopes) for the list of scope options.
+This step automatically creates a `.env` file in the project root, with `SHOPIFY_API_KEY`, `SHOPIFY_API_SECRET`, `SHOP` and `SCOPES` values. The `SHOPIFY_API_KEY` and `SHOPIFY_API_SECRET` can also be found in your app settings in your Partner account. `SCOPES` are set to default values. See [here](https://shopify.dev/api/usage/access-scopes) for the list of scope options.
 
 ## Update App API Scopes
 
@@ -113,7 +113,7 @@ Before you start building your app, you'll need to perform the steps below.
 
 To configure the App Proxy extension follow the steps below.
 
-- Follow the steps listed in [Display dynamic store data with app proxies - Add an app proxy](https://shopify.dev/tutorials/display-dynamic-store-data-with-app-proxies#add-an-app-proxy).
+- Follow the steps listed in [Display dynamic store data with app proxies - Add an app proxy](https://shopify.dev/apps/online-store/app-proxies#add-an-app-proxy).
 - Set the Sub path field to `prapp`.
 - Set the Proxy URL field to `{YOUR_TUNNEL_URL/api}`.
 - Click `Save`.

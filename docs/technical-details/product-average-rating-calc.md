@@ -31,8 +31,8 @@ The list of messages are scoped per product and and are processed in sequence wh
 
 ## Client-side
 
-Since we also want to showcase how to manage metafields and make calls from the client-side (embedded app frontend) to the [Shopify Admin API](https://shopify.dev/docs/admin-api), messages are created from the client-side once users publish, unpublish or delete reviews.
+Since we also want to showcase how to manage metafields and make calls from the client-side (embedded app frontend) to the [Shopify Admin API](https://shopify.dev/api/admin), messages are created from the client-side once users publish, unpublish or delete reviews.
 
 ## Backend (Node.js)
 
-We leverage the power of [Shopify Webhooks](https://shopify.dev/docs/admin-api/rest/reference/events/webhook). Once the app is installed we register to the **products/update** webhook and this allows us to be notified when a product is updated, and perform the necessary actions involved with calculating the new average rating, see [server/jobs/product-update](https://github.com/Shopify/product-reviews-sample-app/blob/main/server/jobs/product-update.js).
+We leverage the power of [Shopify Webhooks](https://shopify.dev/api/admin-rest/latest/resources/webhook). Once the app is installed we register to the **products/update** webhook and this allows us to be notified when a product is updated, and perform the necessary actions involved with calculating the new average rating, see [server/jobs/product-update](/server/jobs/product-update.js).
