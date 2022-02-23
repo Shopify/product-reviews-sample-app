@@ -113,8 +113,8 @@ Steps for publishing:
 
 Further information:
 
-- [CLI Extension Commands](https://shopify.dev/tutorials/shopify-app-cli-extension-commands).
-- [Extension Versioning](https://shopify.dev/docs/app-extensions?locale=en#app-extension-versioning)
+- [CLI Extension Commands](https://shopify.dev/apps/tools/cli/extension-commands)
+- [Extension Versioning](https://shopify.dev/apps/app-extensions#app-extension-versioning)
 
 ## Scaffolding New Checkout Extensions
 

@@ -25,7 +25,7 @@ We've created this app to inspire the next generation of apps developed for Shop
 
 ## App developer requirements
 
-- We recommend going through the entirety of our [Build a Shopify App with Node and React](https://shopify.dev/tutorials/build-a-shopify-app-with-node-and-react) guide to get familiar with how our tooling works.
+- We recommend going through the entirety of our [Apps overview](https://shopify.dev/apps/getting-started) guide to get familiar with how our tooling works.
 - If you don’t have one, [create a Shopify partner account](https://partners.shopify.com/signup).
 - If you don’t have one, [create a Development store](https://help.shopify.com/en/partners/dashboard/development-stores#create-a-development-store) where you can install and test your app.
 - In the Partner dashboard, [create a new app](https://help.shopify.com/en/api/tools/partner-dashboard/your-apps#create-a-new-app). You’ll need this app’s API credentials during the setup process.
@@ -83,19 +83,19 @@ You can follow our [getting started guide](docs/getting-started.md), which will 
 
 Shopify APIs have previously been available through REST, but more recently the Admin API was made available through GraphQL. Unlike REST APIs, which use multiple endpoints to return large sets of data, GraphQL uses a single endpoint with fields that can be queried to specify the data you need. This generally improves the speed of your app because it’s not asking for data it doesn’t intend to use.
 
-_for more information on the GraphQL Admin API, [check out our reference guide](https://shopify.dev/docs/admin-api/graphql/reference)._
+_for more information on the GraphQL Admin API, [check out our reference guide](https://shopify.dev/api/admin-graphql)._
 
 ### App Bridge
 
 Shopify App Bridge lets you embed your app directly inside the Shopify Admin. It offers React component wrappers for some actions, and is directly integrated with Polaris components. It offers a consistent experience for merchants, whether it’s on the web or in the Shopify Mobile app for iOS or Android.
 
-_for more information on App Bridge, [check out our reference guide](https://shopify.dev/tools/app-bridge)._
+_for more information on App Bridge, [check out our reference guide](https://shopify.dev/apps/tools/app-bridge)._
 
 ### Metafields
 
 Metafields represent custom metadata attached to a resource (for example, a shop or a product). Metafields can be sorted into namespaces and are composed of keys, values, and value types. They can be used as a data layer to create and store a small amount of information relating to Shopify resources.
 
-_for more information on Metafields, [check out our guide](https://shopify.dev/tutorials/manage-metafields-with-graphql-admin-api)._
+_for more information on Metafields, [check out our guide](https://shopify.dev/apps/metafields)._
 
 ### Theme App Extensions - App Blocks
 

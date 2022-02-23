@@ -1,6 +1,6 @@
 # Data layer
 
-We want to showcase how to use our [Metafields API](https://shopify.dev/docs/admin-api/rest/reference/metafield), therefore, the only data persisted in the app storage (Memory storage for this sample app) will be the [shop auth token](https://shopify.dev/concepts/about-apis/authentication). For the rest (i.e.: products with reviews, reviews, average rating) we use the [Metafields API](https://shopify.dev/docs/admin-api/rest/reference/metafield).
+We want to showcase how to use our [Metafields API](https://shopify.dev/api/admin-rest/latest/resources/metafield), therefore, the only data persisted in the app storage (Memory storage for this sample app) will be the [shop auth token](https://shopify.dev/apps/auth). For the rest (i.e.: products with reviews, reviews, average rating) we use the [Metafields API](https://shopify.dev/api/admin-rest/latest/resources/metafield).
 
 - Reviews are stored in JSON typed metafields on the Product level. We encode/decode the data here since a review has various properties (name, rating, title, etc). See the table below for more context over the metafields structure. Note that each review has its own metafield instance.
 - We leverage different public metafields namespaces to implement the publish and unpublish functionality. Since this is a sample app, we don’t worry about exposing unpublished reviews to the storefront because they are essentially owned by the shop.
