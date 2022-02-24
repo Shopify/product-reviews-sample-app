@@ -1,18 +1,18 @@
-name: ⭐️ Feature
-description: New functionality to add
+name: ⭐️ Feedback
+description: Something is wrong or confusing about this app
 title: "[FEATURE] <title>"
 labels: [enhancement]
 body:
 - type: textarea
   attributes:
-    label: Is your proposal related to a problem?
-    description: Provide a clear and concise description of what the problem is. For example, "I'm always frustrated when..."
+    label: What is the problem you are facing?
+    description: Provide a clear and concise description of what the question is. For example, "I'm am confused about..."
   validations:
     required: false
 - type: textarea
   attributes:
-    label: Describe the solution you'd like
-    description: A concise description of what you expected to happen.
+    label: Describe the solution you'd like to see
+    description: A concise description of what you would like update. For example, better explanation in the README, or a link to applicable Dev Docs.
   validations:
     required: false
 - type: textarea
