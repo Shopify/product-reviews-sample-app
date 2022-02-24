@@ -1,0 +1,10 @@
+name: 📝 Generic Issue
+description: Submit an issue without following a template
+title: "<title>"
+body:
+- type: textarea
+  attributes:
+    label: Issue
+    description: A concise description.
+  validations:
+    required: true
