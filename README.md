@@ -7,12 +7,12 @@ This sample app was built as a reference to show how Shopify Developer tools can
 The application is written in [Node.js](https://nodejs.org/) and is comprised of the following elements:
 
 - **[Embedded Node.js application](https://shopify.dev/apps/getting-started/create)**: Which displays an admin UI for managing (publishing, unpublishing, deleting) product reviews.
-- **[Theme app extension](https://shopify.dev/apps/online-store/theme-app-extensions)**: Which enables a merchant to include review information, per product, to their online store.
+- **[Theme app extension](https://shopify.dev/apps/online-store/theme-app-extensions)**: Which enables a merchant to display review information, per product, to their online store.
 - **[Post-purchase checkout extension](https://shopify.dev/apps/checkout/post-purchase)**: Which prompts a user to submit a review directly after making a purchase.
 
 The application leverages the following Shopify APIs:
 
-- To store reviews the application makes use [Metafields](https://shopify.dev/apps/metafields). A benefit of using means it requires no database.
+- To store reviews the application makes use of [Metafields](https://shopify.dev/apps/metafields) to store data, which do not require a database to be set up.
 
 Refer to the architecture diagram below to see how the application's components and Shopify interact with each other.
 
