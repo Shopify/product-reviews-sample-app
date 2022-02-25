@@ -234,7 +234,7 @@ export function App() {
               Wow - {`"${data.productTitle}"`} already arrived!
             </TextBlock>
             <TextBlock size="large">
-              Aren’t those new delivery drones awesome?
+              Aren&apos;t those new delivery drones awesome?
             </TextBlock>
             {data.productImageURL.length !== 0 && (
               <Image
