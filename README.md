@@ -2,35 +2,57 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE.md)
 
-This sample app was built as a reference for how Shopify Developer tools can be used together to create a fully functional application.
+This sample app was built as a reference to show how Shopify Developer tools can be used together to create a [fully functional application](https://shopify.dev/apps/). The example we chose to showcase is an application that facilitates review creation for products in a Shopify store.
 
-The example we chose to showcase is an app which facilitates review creation for products in a Shopify store.
+The application is written in [Node.js](https://nodejs.org/) and is comprised of the following elements:
 
-It makes use of Metafields as a way to store the reviews, which means it requires no database.
+- **[Embedded Node.js application](https://shopify.dev/apps/getting-started/create)**: Which displays an admin UI for managing (publishing, unpublishing, deleting) product reviews.
+- **[Theme app extension](https://shopify.dev/apps/online-store/theme-app-extensions)**: Which enables a merchant to include review information, per product, to their online store.
+- **[Post-purchase checkout extension](https://shopify.dev/apps/checkout/post-purchase)**: Which prompts a user to submit a review directly after making a purchase.
 
-The app is comprised of the following elements:
+The application leverages the following Shopify APIs:
 
-1. An **embedded node app** which displays an admin UI for managing product reviews (publishing, unpublishing, deleting, etc)
-2. A **theme app extension** which enables a merchant to include review information on their storefront, using **App Blocks**. Including:
-   - Detailed product reviews per product, including a form where customers can submit new reviews.
-   - An overall product rating, calculated using the average of all published reviews.
-3. A **post-purchase checkout extension**, which prompts users to submit a review directly after making a purchase.
+- To store reviews the application makes use [Metafields](https://shopify.dev/apps/metafields). A benefit of using means it requires no database.
+
+Refer to the architecture diagram below to see how the application's components and Shopify interact with each other.
+
+```mermaid
+flowchart
+    subgraph Storefront
+        ratings[Show reviews on product page]
+        feedback[Review form at checkout]
+    end
+
+    subgraph Shopify Admin
+        ac[Embedded Node.js Application] <--> te[Theme App Extension]
+        ac[Embedded Node.js Application] <--> pc[Post-Purchase Checkout Extension]
+    end
+
+    subgraph Shopify Platform
+        meta[Metafield API]
+        products[Product API]
+        oauth[OAuth API]
+    end
+
+     classDef green fill:#9f6,stroke:#333,stroke-width:2px;
+     classDef orange fill:#f96,stroke:#333,stroke-width:2px;
+     class te,ratings green
+     class feedback,pc orange
+```
 
 ## Limitations
 
-We've created this app to inspire the next generation of apps developed for Shopify merchants. When learning from this code, keep in mind:
+When using this code keep in mind:
 
-1. This is a sample app, not a production ready app.
-2. Metafields are going to be a much bigger part of the platform and will support building production apps with a lot of data. For now, we recommend metafields for simpler data for apps.
+1. This is a sample application. It is not production-ready.
+2. Metafields are going to be a bigger part of the platform and will support building applications with more complex data structures.
 
-## App developer requirements
+## Requirements
 
 - We recommend going through the entirety of our [Apps overview](https://shopify.dev/apps/getting-started) guide to get familiar with how our tooling works.
 - If you don’t have one, [create a Shopify partner account](https://partners.shopify.com/signup).
 - If you don’t have one, [create a Development store](https://help.shopify.com/en/partners/dashboard/development-stores#create-a-development-store) where you can install and test your app.
 - In the Partner dashboard, [create a new app](https://help.shopify.com/en/api/tools/partner-dashboard/your-apps#create-a-new-app). You’ll need this app’s API credentials during the setup process.
-
-<!-- Make sure this section is in sync with docs/README.md -->
 
 ## Getting started
 
@@ -115,4 +137,4 @@ All developers who wish to contribute through code or issues, please first read 
 
 ## License
 
-Copyright © 2018 Shopify. See [LICENSE](LICENSE.md) for further details.
+Copyright © 2022 Shopify. See [LICENSE](LICENSE.md) for further details.
