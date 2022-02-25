@@ -214,7 +214,7 @@ export function App() {
 
   return (
     /**
-     * We must use components from the `argo-post-purchase` packages, since they are designed to
+     * We must use components from the `post-purchase-ui-extensions-react` packages, since they are designed to
      * work inside the post-checkout iframe. If we try to use regular html elements, an error with be thrown.
      */
     <BlockStack spacing="loose">
