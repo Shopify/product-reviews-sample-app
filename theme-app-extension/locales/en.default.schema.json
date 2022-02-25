@@ -1,0 +1,62 @@
+{
+	"blocks": {
+		"average-rating": {
+			"name": "Average Review Score",
+			"settings": {
+				"stars_fill_color": {
+					"label": "Stars color"
+				},
+				"star_size": {
+					"label": "Stars size"
+				},
+				"padding_x":{
+					"label": "Horizontal spacing"
+				},
+				"padding_y": {
+					"label": "Vertical spacing"
+				},
+				"show_heading": {
+					"label": "Show Heading"
+				},
+				"heading": {
+					"label": "Heading"
+				},
+				"product": {
+					"label": "Product"
+				}
+			}
+		},
+		"product-reviews": {
+			"name": "Product Reviews",
+			"settings": {
+				"stars_fill_color": {
+					"label": "Stars color"
+				},
+				"star_size": {
+					"label": "Stars size"
+				},
+				"padding_x":{
+					"label": "Horizontal spacing"
+				},
+				"padding_y": {
+					"label": "Vertical spacing"
+				},
+				"heading": {
+					"label": "Heading"
+				},
+				"no_reviews_action_text": {
+					"label": "Call to action text when there are no reviews"
+				},
+				"existing_reviews_action_text": {
+					"label": "Call to action text when the product has reviews"
+				},
+				"allow_unverified_reviews": {
+					"label": "Allow unverified review submissions"
+				},
+				"product": {
+					"label": "Product"
+				}
+			}
+		}
+	}
+}
