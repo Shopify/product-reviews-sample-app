@@ -1,0 +1,7 @@
+source_language: en
+target_languages: [cs, da, de, es, fi, fr, it, ja, ko, nb, nl, pl, pt-BR, pt-PT, sv, th, tr, vi, zh-CN, zh-TW]
+components:
+  - name: 'default'
+    audience: merchant
+    paths:
+      - config/locales/**/{{language}}.yml
