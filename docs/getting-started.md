@@ -29,6 +29,8 @@ Before you start running the Product Reviews sample app, you'll need to perform 
 
 ## Install dependencies
 
+> NOTE: This sample application has been written and tested with Node.js v16.
+
 In your terminal run to install dependencies
 
 ```bash
