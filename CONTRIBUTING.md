@@ -24,9 +24,21 @@ Requirements:
 
 You can set up your development environment by running the following:
 
-```
+```bash
 git clone git@github.com:Shopify/product-reviews-sample-app.git # get the code
 cd product-reviews-sample-app    	                        # change into the source directory
 npm install                                                     # install dependencies
 npm run build                                                   # build library
+```
+
+Run `prettier` to automatically format code:
+
+```bash
+npx prettier --check checkout-extension components constants graphql hooks lib pages server theme-app-extension utilities server
+```
+
+or, to overwrite files in-place:
+
+```bash
+npx prettier --write checkout-extension components constants graphql hooks lib pages server theme-app-extension utilities server
 ```
