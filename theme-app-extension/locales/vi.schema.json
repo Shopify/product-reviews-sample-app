@@ -1,0 +1,62 @@
+{
+  "blocks": {
+    "average-rating": {
+      "name": "Điểm đánh giá trung bình",
+      "settings": {
+        "stars_fill_color": {
+          "label": "Màu sao"
+        },
+        "star_size": {
+          "label": "Cỡ sao"
+        },
+        "padding_x": {
+          "label": "Khoảng cách ngang"
+        },
+        "padding_y": {
+          "label": "Khoảng cách dọc"
+        },
+        "show_heading": {
+          "label": "Hiển thị tiêu đề"
+        },
+        "heading": {
+          "label": "Tiêu đề"
+        },
+        "product": {
+          "label": "Sản phẩm"
+        }
+      }
+    },
+    "product-reviews": {
+      "name": "Đánh giá sản phẩm",
+      "settings": {
+        "stars_fill_color": {
+          "label": "Màu sao"
+        },
+        "star_size": {
+          "label": "Cỡ sao"
+        },
+        "padding_x": {
+          "label": "Khoảng cách ngang"
+        },
+        "padding_y": {
+          "label": "Khoảng cách dọc"
+        },
+        "heading": {
+          "label": "Tiêu đề"
+        },
+        "no_reviews_action_text": {
+          "label": "Văn bản kêu gọi hành động khi không có đánh giá nào"
+        },
+        "existing_reviews_action_text": {
+          "label": "Văn bản kêu gọi hành động khi sản phẩm có đánh giá"
+        },
+        "allow_unverified_reviews": {
+          "label": "Cho phép gửi đánh giá chưa được xác minh"
+        },
+        "product": {
+          "label": "Sản phẩm"
+        }
+      }
+    }
+  }
+}

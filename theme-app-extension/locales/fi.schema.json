@@ -1,0 +1,62 @@
+{
+  "blocks": {
+    "average-rating": {
+      "name": "Keskimääräinen arvio",
+      "settings": {
+        "stars_fill_color": {
+          "label": "Tähtien väri"
+        },
+        "star_size": {
+          "label": "Tähtien koko"
+        },
+        "padding_x": {
+          "label": "Vaakasuuntainen tasaus"
+        },
+        "padding_y": {
+          "label": "Pystysuuntainen tasaus"
+        },
+        "show_heading": {
+          "label": "Näytä otsikko"
+        },
+        "heading": {
+          "label": "Otsikko"
+        },
+        "product": {
+          "label": "Tuote"
+        }
+      }
+    },
+    "product-reviews": {
+      "name": "Tuotearvostelut",
+      "settings": {
+        "stars_fill_color": {
+          "label": "Tähtien väri"
+        },
+        "star_size": {
+          "label": "Tähtien koko"
+        },
+        "padding_x": {
+          "label": "Vaakasuuntainen tasaus"
+        },
+        "padding_y": {
+          "label": "Pystysuuntainen tasaus"
+        },
+        "heading": {
+          "label": "Otsikko"
+        },
+        "no_reviews_action_text": {
+          "label": "Näytä toimenpidemuistutus, jos arvosteluja ei ole yhtään"
+        },
+        "existing_reviews_action_text": {
+          "label": "Näytä toimenpidemuistutus, jos tuotteella on arvosteluja"
+        },
+        "allow_unverified_reviews": {
+          "label": "Salli vahvistamattomien arvostelujen syöttö"
+        },
+        "product": {
+          "label": "Tuote"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "blocks": {
+    "average-rating": {
+      "name": "Gennemsnitlig score for anmeldelser",
+      "settings": {
+        "stars_fill_color": {
+          "label": "Farve på stjerner"
+        },
+        "star_size": {
+          "label": "Størrelse på stjerner"
+        },
+        "padding_x": {
+          "label": "Lodret afstand"
+        },
+        "padding_y": {
+          "label": "Vandret afstand"
+        },
+        "show_heading": {
+          "label": "Vis overskrift"
+        },
+        "heading": {
+          "label": "Overskrift"
+        },
+        "product": {
+          "label": "Produkt"
+        }
+      }
+    },
+    "product-reviews": {
+      "name": "Produktanmeldelser",
+      "settings": {
+        "stars_fill_color": {
+          "label": "Farve på stjerner"
+        },
+        "star_size": {
+          "label": "Størrelse på stjerner"
+        },
+        "padding_x": {
+          "label": "Lodret afstand"
+        },
+        "padding_y": {
+          "label": "Vandret afstand"
+        },
+        "heading": {
+          "label": "Overskrift"
+        },
+        "no_reviews_action_text": {
+          "label": "Tekst, der opfordrer til handling, når produktet ikke har nogen anmeldelser"
+        },
+        "existing_reviews_action_text": {
+          "label": "Tekst, der opfordrer til handling, når produktet har anmeldelser"
+        },
+        "allow_unverified_reviews": {
+          "label": "Tillad indsendelse af ubekræftede anmeldelser"
+        },
+        "product": {
+          "label": "Produkt"
+        }
+      }
+    }
+  }
+}

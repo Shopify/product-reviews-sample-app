@@ -1,0 +1,62 @@
+{
+  "blocks": {
+    "average-rating": {
+      "name": "平均评论分数",
+      "settings": {
+        "stars_fill_color": {
+          "label": "星形颜色"
+        },
+        "star_size": {
+          "label": "星形大小"
+        },
+        "padding_x": {
+          "label": "水平间距"
+        },
+        "padding_y": {
+          "label": "垂直间距"
+        },
+        "show_heading": {
+          "label": "显示标题"
+        },
+        "heading": {
+          "label": "标题"
+        },
+        "product": {
+          "label": "产品"
+        }
+      }
+    },
+    "product-reviews": {
+      "name": "产品评论",
+      "settings": {
+        "stars_fill_color": {
+          "label": "星形颜色"
+        },
+        "star_size": {
+          "label": "星形大小"
+        },
+        "padding_x": {
+          "label": "水平间距"
+        },
+        "padding_y": {
+          "label": "垂直间距"
+        },
+        "heading": {
+          "label": "标题"
+        },
+        "no_reviews_action_text": {
+          "label": "没有评论时的行动号召文本"
+        },
+        "existing_reviews_action_text": {
+          "label": "产品有评论时的行动号召文本"
+        },
+        "allow_unverified_reviews": {
+          "label": "允许未经验证的评论提交"
+        },
+        "product": {
+          "label": "产品"
+        }
+      }
+    }
+  }
+}

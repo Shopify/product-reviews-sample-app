@@ -1,0 +1,62 @@
+{
+  "blocks": {
+    "average-rating": {
+      "name": "리뷰 평점",
+      "settings": {
+        "stars_fill_color": {
+          "label": "별표 색상"
+        },
+        "star_size": {
+          "label": "별표 사이즈"
+        },
+        "padding_x": {
+          "label": "수평 간격"
+        },
+        "padding_y": {
+          "label": "수직 간격"
+        },
+        "show_heading": {
+          "label": "제목 표시"
+        },
+        "heading": {
+          "label": "제목"
+        },
+        "product": {
+          "label": "제품"
+        }
+      }
+    },
+    "product-reviews": {
+      "name": "제품 리뷰",
+      "settings": {
+        "stars_fill_color": {
+          "label": "별표 색상"
+        },
+        "star_size": {
+          "label": "별표 사이즈"
+        },
+        "padding_x": {
+          "label": "수평 간격"
+        },
+        "padding_y": {
+          "label": "수직 간격"
+        },
+        "heading": {
+          "label": "제목"
+        },
+        "no_reviews_action_text": {
+          "label": "리뷰가 없을 때 클릭 유도(CTA) 텍스트"
+        },
+        "existing_reviews_action_text": {
+          "label": "제품에 리뷰가 있을 때 클릭 유도(CTA) 텍스트"
+        },
+        "allow_unverified_reviews": {
+          "label": "확인되지 않은 리뷰 제출 허용"
+        },
+        "product": {
+          "label": "제품"
+        }
+      }
+    }
+  }
+}
