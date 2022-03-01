@@ -17,8 +17,6 @@
     "url": "https://github.com/Shopify/product-reviews-sample-app/issues"
   },
   "dependencies": {
-    "@babel/core": "7.12.10",
-    "@babel/polyfill": "^7.6.0",
     "@babel/preset-env": "^7.12.11",
     "@babel/register": "^7.12.10",
     "@babel/runtime": "^7.17.2",
@@ -51,9 +49,14 @@
     "webpack": "^5.69.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.17.5",
+    "@babel/plugin-proposal-class-properties": "^7.0.0",
+    "@babel/plugin-proposal-json-strings": "^7.0.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.0.0",
+    "@babel/plugin-syntax-import-meta": "^7.0.0",
     "@babel/plugin-transform-runtime": "^7.12.10",
-    "@babel/preset-stage-3": "^7.0.0",
-    "babel-register": "^6.26.0",
+    "@babel/register": "^7.0.0",
+    "core-js": "^3.21.1",
     "husky": "^4.3.6",
     "lint-staged": "^10.5.3",
     "nodemon": "^2.0.0",
