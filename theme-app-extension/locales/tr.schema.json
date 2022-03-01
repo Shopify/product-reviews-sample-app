@@ -1,0 +1,62 @@
+{
+  "blocks": {
+    "average-rating": {
+      "name": "Ortalama Değerlendirme Puanı",
+      "settings": {
+        "stars_fill_color": {
+          "label": "Yıldız rengi"
+        },
+        "star_size": {
+          "label": "Yıldız boyutu"
+        },
+        "padding_x": {
+          "label": "Yatay boşluk"
+        },
+        "padding_y": {
+          "label": "Dikey boşluk"
+        },
+        "show_heading": {
+          "label": "Başlığı Göster"
+        },
+        "heading": {
+          "label": "Başlık"
+        },
+        "product": {
+          "label": "Ürün"
+        }
+      }
+    },
+    "product-reviews": {
+      "name": "Ürün Değerlendirmeleri",
+      "settings": {
+        "stars_fill_color": {
+          "label": "Yıldız rengi"
+        },
+        "star_size": {
+          "label": "Yıldız boyutu"
+        },
+        "padding_x": {
+          "label": "Yatay boşluk"
+        },
+        "padding_y": {
+          "label": "Dikey boşluk"
+        },
+        "heading": {
+          "label": "Başlık"
+        },
+        "no_reviews_action_text": {
+          "label": "Değerlendirme yokken gözükecek harekete geçirici mesaj"
+        },
+        "existing_reviews_action_text": {
+          "label": "Ürün değerlendirmesi varken gözükecek harekete geçirici mesaj"
+        },
+        "allow_unverified_reviews": {
+          "label": "Doğrulanmamış değerlendirme gönderimlerine izin ver"
+        },
+        "product": {
+          "label": "Ürün"
+        }
+      }
+    }
+  }
+}
