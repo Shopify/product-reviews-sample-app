@@ -1,0 +1,62 @@
+{
+  "blocks": {
+    "average-rating": {
+      "name": "平均評論分數",
+      "settings": {
+        "stars_fill_color": {
+          "label": "星評顏色"
+        },
+        "star_size": {
+          "label": "星評尺寸"
+        },
+        "padding_x": {
+          "label": "水平間距"
+        },
+        "padding_y": {
+          "label": "垂直間距"
+        },
+        "show_heading": {
+          "label": "顯示標題"
+        },
+        "heading": {
+          "label": "標題"
+        },
+        "product": {
+          "label": "產品"
+        }
+      }
+    },
+    "product-reviews": {
+      "name": "產品評論",
+      "settings": {
+        "stars_fill_color": {
+          "label": "星評顏色"
+        },
+        "star_size": {
+          "label": "星評尺寸"
+        },
+        "padding_x": {
+          "label": "水平間距"
+        },
+        "padding_y": {
+          "label": "垂直間距"
+        },
+        "heading": {
+          "label": "標題"
+        },
+        "no_reviews_action_text": {
+          "label": "尚無評論時顯示的行動號召文字"
+        },
+        "existing_reviews_action_text": {
+          "label": "產品已有評論時顯示的行動號召文字"
+        },
+        "allow_unverified_reviews": {
+          "label": "允許提交未經驗證的評論"
+        },
+        "product": {
+          "label": "產品"
+        }
+      }
+    }
+  }
+}
