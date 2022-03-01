@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback } from "react";
 import {
   extend,
   render,
@@ -16,23 +16,23 @@ import {
   View,
   InlineStack,
   Radio,
-} from '@shopify/post-purchase-ui-extensions-react';
-import { FormLayoutGroup } from '@shopify/post-purchase-ui-extensions';
+} from "@shopify/post-purchase-ui-extensions-react";
+import { FormLayoutGroup } from "@shopify/post-purchase-ui-extensions";
 
 function createUrl(shop, endpoint) {
   /**
    * NOTE: This should reflect your app's ngrok URL (if running locally)
    * or the url of your production app (if pushing/publishing the extension)
    */
-  const embeddedAppHost = 'https://your-app-host.com';
+  const embeddedAppHost = "https://your-app-host.com";
   return `${embeddedAppHost}/${endpoint}?shop=${shop}`;
 }
 
 async function getProduct({ shopDomain, lineItems, referenceId, token }) {
-  const url = createUrl(shopDomain, 'api/post-purchase/get-product');
+  const url = createUrl(shopDomain, "api/post-purchase/get-product");
   const res = await fetch(url, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
       product_id: lineItems[0].product.id,
       reference_id: referenceId,
@@ -57,7 +57,7 @@ async function getProduct({ shopDomain, lineItems, referenceId, token }) {
  * We store it by calling `storage.update(data)`
  */
 extend(
-  'Checkout::PostPurchase::ShouldRender',
+  "Checkout::PostPurchase::ShouldRender",
   async ({
     inputData: {
       initialPurchase: { lineItems, referenceId },
@@ -93,7 +93,7 @@ extend(
  * This `Render` hook gets called if `'Checkout::PostPurchase::ShouldRender'` returns `{ render: true }`
  * Here we tell it to render our `<App/>` component. This will be displayed as an iframe inside the post-checkout page.
  */
-render('Checkout::PostPurchase::Render', () => <App />);
+render("Checkout::PostPurchase::Render", () => <App />);
 
 export function App() {
   /**
@@ -113,12 +113,12 @@ export function App() {
   } = useExtensionInput();
 
   const [progress, setProgress] = useState(null);
-  const [author, setAuthor] = useState('');
-  const [email, setEmail] = useState('');
-  const [rating, setRating] = useState('5');
-  const [title, setTitle] = useState('');
-  const [body, setBody] = useState('');
-  const ratingOptions = ['1', '2', '3', '4', '5'];
+  const [author, setAuthor] = useState("");
+  const [email, setEmail] = useState("");
+  const [rating, setRating] = useState("5");
+  const [title, setTitle] = useState("");
+  const [body, setBody] = useState("");
+  const ratingOptions = ["1", "2", "3", "4", "5"];
 
   const [loading, setLoading] = useState(!initialData?.productId);
   const [error, setError] = useState(null);
@@ -137,7 +137,7 @@ export function App() {
 
       setData(response);
     } catch {
-      setError('Failed to load product info 😱');
+      setError("Failed to load product info 😱");
     } finally {
       setLoading(false);
     }
@@ -150,7 +150,7 @@ export function App() {
   }, [data]);
 
   async function submitReview() {
-    setProgress('SUBMITTING');
+    setProgress("SUBMITTING");
     const review = {
       product_id: data.productId,
       review: {
@@ -168,11 +168,11 @@ export function App() {
      * In the request body we pass in the form data, as well as the referenceId and token (necessary for authentication).
      * The `shop` param is also required for authenticating, but we already have this in the query string (see `createUrl` function).
      */
-    const url = createUrl(shopDomain, 'api/post-purchase/reviews');
+    const url = createUrl(shopDomain, "api/post-purchase/reviews");
     await fetch(url, {
-      method: 'POST',
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
         ...review,
@@ -189,7 +189,7 @@ export function App() {
   }
 
   function declineReview() {
-    setProgress('DECLINING');
+    setProgress("DECLINING");
     /**
      * No action is required, so we call the `done` function to move on to the "Thank-you" page.
      */
@@ -223,9 +223,9 @@ export function App() {
       </CalloutBanner>
       <Layout
         media={[
-          { viewportSize: 'small', sizes: [1, 0, 1], maxInlineSize: 0.9 },
-          { viewportSize: 'medium', sizes: [532, 0, 1], maxInlineSize: 420 },
-          { viewportSize: 'large', sizes: [560, 38, 340] },
+          { viewportSize: "small", sizes: [1, 0, 1], maxInlineSize: 0.9 },
+          { viewportSize: "medium", sizes: [532, 0, 1], maxInlineSize: 420 },
+          { viewportSize: "large", sizes: [560, 38, 340] },
         ]}
       >
         <View padding="base">
@@ -299,7 +299,7 @@ export function App() {
                   <Button
                     onPress={submitReview}
                     disabled={progress !== null}
-                    loading={progress === 'SUBMITTING'}
+                    loading={progress === "SUBMITTING"}
                   >
                     Submit Review
                   </Button>
@@ -307,7 +307,7 @@ export function App() {
                     onPress={declineReview}
                     subdued
                     disabled={progress !== null}
-                    loading={progress === 'DECLINING'}
+                    loading={progress === "DECLINING"}
                   >
                     No Thanks
                   </Button>
