@@ -1,3 +1,7 @@
 {
-	
+  "blocks": {
+		"average-rating": {
+			"heading": "Average Score"
+		}
+	}
 }

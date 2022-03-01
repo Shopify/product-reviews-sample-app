@@ -2,9 +2,7 @@
 
 {% if avg_rating > 0 %}
 <div class="prapp-average-block" style="padding: {{ block.settings.padding_y }}px {{ block.settings.padding_x }}px;" data-product-id="{{ block.settings.product.id }}">
-  {% if block.settings.show_heading and block.settings.heading != blank %}
-    <h4>{{ block.settings.heading }}</h4>
-  {% endif %}
+  <h4>{{ "blocks.average-rating.heading" | t }}</h4>
   {% render "star-rating", rating: avg_rating, fill: block.settings.stars_fill_color, size: block.settings.star_size %}
 </div>
 {% endif %}
@@ -39,18 +37,6 @@
       "type": "number",
       "label": "t:blocks.average-rating.settings.padding_y.label",
       "default": 0
-    },
-    {
-      "id": "show_heading",
-      "type": "checkbox",
-      "label": "t:blocks.average-rating.settings.show_heading.label",
-      "default": false
-    },
-    {
-      "id": "heading",
-      "type": "text",
-      "label": "t:blocks.average-rating.settings.heading.label",
-      "default": "Average Score"
     },
     {
       "id": "product",
