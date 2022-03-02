@@ -30,7 +30,7 @@ Run `shopify extension create` command and from promted selection choose `Theme 
 
 You'll be asked to choose to which app this extension has to be attributed. Theme App Extension can be only one per app.
 
-Once creation is done you will have new directory with some sample App blocks and directories for assets, snippets and locales.
+Once creation is done you will have a new directory with some sample App blocks and directories for assets, snippets and locales. For more information refer to the [theme app extension framework file structure](https://shopify.dev/apps/online-store/theme-app-extensions/extensions-framework#file-structure).
 
 ## Register an extension
 
