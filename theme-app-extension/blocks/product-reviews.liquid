@@ -47,62 +47,62 @@
 
 {% schema %}
 {
-  "name": "Product Reviews",
+  "name": "t:blocks.product-reviews.name",
   "templates": ["product"],
   "target": "section",
   "settings": [
     {
       "type": "color",
       "id": "stars_fill_color",
-      "label": "Stars color",
+      "label": "t:blocks.product-reviews.settings.stars_fill_color.label",
       "default": "#000000"
     },
     {
       "type": "number",
       "id": "star_size",
-      "label": "Star size",
+      "label": "t:blocks.product-reviews.settings.star_size.label",
       "default": 24
     },
     {
       "type": "number",
       "id": "padding_x",
-      "label": "Horizontal spacing",
+      "label": "t:blocks.product-reviews.settings.padding_x.label",
       "default": 50
     },
     {
       "type": "number",
       "id": "padding_y",
-      "label": "Vertical spacing",
+      "label": "t:blocks.product-reviews.settings.padding_y.label",
       "default": 0
     },
     {
       "id": "heading",
       "type": "text",
-      "label": "Heading",
+      "label": "t:blocks.product-reviews.settings.heading.label",
       "default": "Customer Reviews"
     },
 	  {
       "id": "no_reviews_action_text",
       "type": "text",
-      "label": "Call to action text when there are no reviews",
+      "label": "t:blocks.product-reviews.settings.no_reviews_action_text.label",
       "default": "Be the first to review this product."
     },
 	  {
       "id": "existing_reviews_action_text",
       "type": "text",
-      "label": "Call to action text when the product has reviews",
+      "label": "t:blocks.product-reviews.settings.existing_reviews_action_text.label",
       "default": "Write Review"
     },
     {
       "id": "allow_unverified_reviews",
       "type": "checkbox",
-      "label": "Allow unverified review submissions",
+      "label": "t:blocks.product-reviews.settings.allow_unverified_reviews.label",
       "default": false
     },
     {
       "id": "product",
       "type": "product",
-      "label": "Product",
+      "label": "t:blocks.product-reviews.settings.product.label",
       "autofill": true
     }
   ]

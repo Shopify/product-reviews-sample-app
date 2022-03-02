@@ -1,0 +1,62 @@
+{
+  "blocks": {
+    "average-rating": {
+      "name": "Průměrné skóre recenzí",
+      "settings": {
+        "stars_fill_color": {
+          "label": "Barva hvězdiček"
+        },
+        "star_size": {
+          "label": "Velikost hvězdiček"
+        },
+        "padding_x": {
+          "label": "Mezery ve vodorovném směru"
+        },
+        "padding_y": {
+          "label": "Mezery ve svislém směru"
+        },
+        "show_heading": {
+          "label": "Zobrazit nadpis"
+        },
+        "heading": {
+          "label": "Nadpis"
+        },
+        "product": {
+          "label": "Produkt"
+        }
+      }
+    },
+    "product-reviews": {
+      "name": "Recenze produktů",
+      "settings": {
+        "stars_fill_color": {
+          "label": "Barva hvězdiček"
+        },
+        "star_size": {
+          "label": "Velikost hvězdiček"
+        },
+        "padding_x": {
+          "label": "Mezery ve vodorovném směru"
+        },
+        "padding_y": {
+          "label": "Mezery ve svislém směru"
+        },
+        "heading": {
+          "label": "Nadpis"
+        },
+        "no_reviews_action_text": {
+          "label": "Text výzvy k akci (CTA) v případě, že zatím nejsou k dispozici žádné recenze"
+        },
+        "existing_reviews_action_text": {
+          "label": "Text výzvy k akci (CTA) v případě, že u produktu zatím nejsou k dispozici žádné recenze"
+        },
+        "allow_unverified_reviews": {
+          "label": "Povolit neověřená odeslání recenzí"
+        },
+        "product": {
+          "label": "Produkt"
+        }
+      }
+    }
+  }
+}

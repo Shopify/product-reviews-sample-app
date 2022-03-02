@@ -1,0 +1,62 @@
+{
+  "blocks": {
+    "average-rating": {
+      "name": "平均レビュースコア",
+      "settings": {
+        "stars_fill_color": {
+          "label": "星の色"
+        },
+        "star_size": {
+          "label": "星のサイズ"
+        },
+        "padding_x": {
+          "label": "水平スペース"
+        },
+        "padding_y": {
+          "label": "垂直スペース"
+        },
+        "show_heading": {
+          "label": "見出しを表示する"
+        },
+        "heading": {
+          "label": "見出し"
+        },
+        "product": {
+          "label": "商品"
+        }
+      }
+    },
+    "product-reviews": {
+      "name": "商品レビュー",
+      "settings": {
+        "stars_fill_color": {
+          "label": "星の色"
+        },
+        "star_size": {
+          "label": "星のサイズ"
+        },
+        "padding_x": {
+          "label": "水平スペース"
+        },
+        "padding_y": {
+          "label": "垂直スペース"
+        },
+        "heading": {
+          "label": "見出し"
+        },
+        "no_reviews_action_text": {
+          "label": "レビューがない時の行動喚起 (CTA) テキスト"
+        },
+        "existing_reviews_action_text": {
+          "label": "商品にレビューがある時の行動喚起 (CTA) テキスト"
+        },
+        "allow_unverified_reviews": {
+          "label": "未確認のレビュー投稿を許可する"
+        },
+        "product": {
+          "label": "商品"
+        }
+      }
+    }
+  }
+}

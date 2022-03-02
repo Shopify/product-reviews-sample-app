@@ -1,0 +1,62 @@
+{
+  "blocks": {
+    "average-rating": {
+      "name": "Gemiddelde beoordelingsscore",
+      "settings": {
+        "stars_fill_color": {
+          "label": "Kleur van de ster"
+        },
+        "star_size": {
+          "label": "Grootte van de ster"
+        },
+        "padding_x": {
+          "label": "Horizontale afstand"
+        },
+        "padding_y": {
+          "label": "Verticale afstand"
+        },
+        "show_heading": {
+          "label": "Toon kop"
+        },
+        "heading": {
+          "label": "Kop"
+        },
+        "product": {
+          "label": "Product"
+        }
+      }
+    },
+    "product-reviews": {
+      "name": "Product Reviews",
+      "settings": {
+        "stars_fill_color": {
+          "label": "Kleur van de ster"
+        },
+        "star_size": {
+          "label": "Grootte van de ster"
+        },
+        "padding_x": {
+          "label": "Horizontale afstand"
+        },
+        "padding_y": {
+          "label": "Verticale afstand"
+        },
+        "heading": {
+          "label": "Kop"
+        },
+        "no_reviews_action_text": {
+          "label": "Oproep tot actie als er geen beoordelingen zijn"
+        },
+        "existing_reviews_action_text": {
+          "label": "Oproep tot actie als er beoordelingen van het product zijn"
+        },
+        "allow_unverified_reviews": {
+          "label": "Niet-geverifieerde inzendingen van beoordelingen toestaan"
+        },
+        "product": {
+          "label": "Product"
+        }
+      }
+    }
+  }
+}

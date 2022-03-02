@@ -1,0 +1,62 @@
+{
+  "blocks": {
+    "average-rating": {
+      "name": "Genomsnittligt granskningsresultat",
+      "settings": {
+        "stars_fill_color": {
+          "label": "Stjärnfärg"
+        },
+        "star_size": {
+          "label": "Stjärnfärg"
+        },
+        "padding_x": {
+          "label": "Horisontellt utrymme"
+        },
+        "padding_y": {
+          "label": "Vertikal avstånd"
+        },
+        "show_heading": {
+          "label": "Visa rubrik"
+        },
+        "heading": {
+          "label": "Rubrik"
+        },
+        "product": {
+          "label": "Produkt"
+        }
+      }
+    },
+    "product-reviews": {
+      "name": "Produktomdömen",
+      "settings": {
+        "stars_fill_color": {
+          "label": "Stjärnfärg"
+        },
+        "star_size": {
+          "label": "Stjärnfärg"
+        },
+        "padding_x": {
+          "label": "Horisontellt utrymme"
+        },
+        "padding_y": {
+          "label": "Vertikal avstånd"
+        },
+        "heading": {
+          "label": "Rubrik"
+        },
+        "no_reviews_action_text": {
+          "label": "Uppmaningstext när det inte finns några granskningar"
+        },
+        "existing_reviews_action_text": {
+          "label": "Uppmaningstext när produkten har granskningar"
+        },
+        "allow_unverified_reviews": {
+          "label": "Tillåt granskningar som inte är verifierade"
+        },
+        "product": {
+          "label": "Produkt"
+        }
+      }
+    }
+  }
+}

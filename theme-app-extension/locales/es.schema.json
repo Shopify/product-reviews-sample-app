@@ -1,0 +1,62 @@
+{
+  "blocks": {
+    "average-rating": {
+      "name": "Puntuación promedio de las reseñas",
+      "settings": {
+        "stars_fill_color": {
+          "label": "Color de las estrellas"
+        },
+        "star_size": {
+          "label": "Tamaño de las estrellas"
+        },
+        "padding_x": {
+          "label": "Espacios horizontales"
+        },
+        "padding_y": {
+          "label": "Espacios verticales"
+        },
+        "show_heading": {
+          "label": "Mostrar encabezado"
+        },
+        "heading": {
+          "label": "Encabezado"
+        },
+        "product": {
+          "label": "Producto"
+        }
+      }
+    },
+    "product-reviews": {
+      "name": "Reseñas de productos",
+      "settings": {
+        "stars_fill_color": {
+          "label": "Color de las estrellas"
+        },
+        "star_size": {
+          "label": "Tamaño de las estrellas"
+        },
+        "padding_x": {
+          "label": "Espacios horizontales"
+        },
+        "padding_y": {
+          "label": "Espacios verticales"
+        },
+        "heading": {
+          "label": "Encabezado"
+        },
+        "no_reviews_action_text": {
+          "label": "Texto de llamada a la acción cuando no haya reseñas"
+        },
+        "existing_reviews_action_text": {
+          "label": "Texto de llamada a la acción cuando el producto tenga reseñas"
+        },
+        "allow_unverified_reviews": {
+          "label": "Permitir envíos de reseñas no verificadas"
+        },
+        "product": {
+          "label": "Producto"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "blocks": {
+    "average-rating": {
+      "name": "Note moyenne des avis",
+      "settings": {
+        "stars_fill_color": {
+          "label": "Couleur des étoiles"
+        },
+        "star_size": {
+          "label": "Taille des étoiles"
+        },
+        "padding_x": {
+          "label": "Espacement horizontal"
+        },
+        "padding_y": {
+          "label": "Espacement vertical"
+        },
+        "show_heading": {
+          "label": "Afficher le titre"
+        },
+        "heading": {
+          "label": "Titre"
+        },
+        "product": {
+          "label": "Produit"
+        }
+      }
+    },
+    "product-reviews": {
+      "name": "Avis sur les produits",
+      "settings": {
+        "stars_fill_color": {
+          "label": "Couleur des étoiles"
+        },
+        "star_size": {
+          "label": "Taille des étoiles"
+        },
+        "padding_x": {
+          "label": "Espacement horizontal"
+        },
+        "padding_y": {
+          "label": "Espacement vertical"
+        },
+        "heading": {
+          "label": "Titre"
+        },
+        "no_reviews_action_text": {
+          "label": "Texte d’appel à l’action lorsqu’il n’y a pas d’avis"
+        },
+        "existing_reviews_action_text": {
+          "label": "Texte d’appel à l’action lorsque le produit a des avis"
+        },
+        "allow_unverified_reviews": {
+          "label": "Autoriser les soumissions d’avis non vérifiés"
+        },
+        "product": {
+          "label": "Produit"
+        }
+      }
+    }
+  }
+}

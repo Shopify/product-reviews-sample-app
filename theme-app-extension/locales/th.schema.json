@@ -1,0 +1,62 @@
+{
+  "blocks": {
+    "average-rating": {
+      "name": "คะแนนรีวิวเฉลี่ย",
+      "settings": {
+        "stars_fill_color": {
+          "label": "สีของดาว"
+        },
+        "star_size": {
+          "label": "ขนาดของดาว"
+        },
+        "padding_x": {
+          "label": "ระยะห่างแนวนอน"
+        },
+        "padding_y": {
+          "label": "ระยะห่างแนวตั้ง"
+        },
+        "show_heading": {
+          "label": "แสดงหัวเรื่อง"
+        },
+        "heading": {
+          "label": "หัวเรื่อง"
+        },
+        "product": {
+          "label": "สินค้า"
+        }
+      }
+    },
+    "product-reviews": {
+      "name": "รีวิวของสินค้า",
+      "settings": {
+        "stars_fill_color": {
+          "label": "สีของดาว"
+        },
+        "star_size": {
+          "label": "ขนาดของดาว"
+        },
+        "padding_x": {
+          "label": "ระยะห่างแนวนอน"
+        },
+        "padding_y": {
+          "label": "ระยะห่างแนวตั้ง"
+        },
+        "heading": {
+          "label": "หัวเรื่อง"
+        },
+        "no_reviews_action_text": {
+          "label": "ข้อความกระตุ้นการตัดสินใจเมื่อสินค้าไม่มีรีวิว"
+        },
+        "existing_reviews_action_text": {
+          "label": "ข้อความกระตุ้นการตัดสินใจเมื่อสินค้ามีรีวิว"
+        },
+        "allow_unverified_reviews": {
+          "label": "อนุญาตให้ส่งรีวิวที่ไม่ได้รับการยืนยัน"
+        },
+        "product": {
+          "label": "สินค้า"
+        }
+      }
+    }
+  }
+}

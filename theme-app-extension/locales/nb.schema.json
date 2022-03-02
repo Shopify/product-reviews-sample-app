@@ -1,0 +1,62 @@
+{
+  "blocks": {
+    "average-rating": {
+      "name": "Gjennomsnittlig omtalepoengsum",
+      "settings": {
+        "stars_fill_color": {
+          "label": "Stjernefarge"
+        },
+        "star_size": {
+          "label": "Stjernestørrelse"
+        },
+        "padding_x": {
+          "label": "Vannrett marg"
+        },
+        "padding_y": {
+          "label": "Loddrett marg"
+        },
+        "show_heading": {
+          "label": "Vis overskrift"
+        },
+        "heading": {
+          "label": "Overskrift"
+        },
+        "product": {
+          "label": "Produkt"
+        }
+      }
+    },
+    "product-reviews": {
+      "name": "Produktanmeldelser",
+      "settings": {
+        "stars_fill_color": {
+          "label": "Stjernefarge"
+        },
+        "star_size": {
+          "label": "Stjernestørrelse"
+        },
+        "padding_x": {
+          "label": "Vannrett marg"
+        },
+        "padding_y": {
+          "label": "Loddrett marg"
+        },
+        "heading": {
+          "label": "Overskrift"
+        },
+        "no_reviews_action_text": {
+          "label": "Handlingstekst når det ikke finnes noen omtaler"
+        },
+        "existing_reviews_action_text": {
+          "label": "Handlingstekst når produktet har omtaler"
+        },
+        "allow_unverified_reviews": {
+          "label": "Tillat innsending av ubekreftede omtaler"
+        },
+        "product": {
+          "label": "Produkt"
+        }
+      }
+    }
+  }
+}
