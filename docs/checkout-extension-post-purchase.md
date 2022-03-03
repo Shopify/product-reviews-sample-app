@@ -39,9 +39,9 @@ cd checkout-extension && touch .env
 Add the following environment variables to the `.env` to connect the extension to your app:
 
 ```
-# Your app's API Key. You can find this in your partner dashboard
+# Your app's API Key. You can find this in your partner dashboard or copy it from the node app .env
 SHOPIFY_API_KEY=1234
-# Your app's API. Secret You can find this in your partner dashboard
+# Your app's API. Secret You can find this in your partner dashboard or copy it from the node app .env
 SHOPIFY_API_SECRET=abcdefg
 # This can be whatever you want
 EXTENSION_TITLE=my-checkout-extension
@@ -57,7 +57,7 @@ npm install
 
 ### Update the `embeddedAppHost` variable
 
-In the `src/index.js` file the variable `embeddedAppHost` is currently hardcoded. This needs to be updated to reflect your own app host, so it can handle API requests from the extension.
+In the `src/index.js` file the variable `embeddedAppHost` is currently hardcoded. This needs to be updated to reflect the URL that `ngrok` generated.
 
 ## Register the extension
 
