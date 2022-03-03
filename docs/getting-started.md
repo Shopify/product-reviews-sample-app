@@ -1,63 +1,79 @@
-# Getting started
+# Installing the embedded Node.js application
 
-Before you start running the Product Reviews sample app, you'll need to perform the instructions below.
+This document contains steps on how to setup and install the embedded Node.js application to your Shopify store. Each step begins with a reason for why we're doing that step (_usually written like this_), then some instructions for the reader to perform.
 
 ## Table of contents
 
-- [Getting started](#getting-started)
-  - [Table of contents](#table-of-contents)
-  - [Requirements](#requirements)
-  - [Install dependencies](#install-dependencies)
-  - [Connect to an embedded app in your Partner account](#connect-to-an-embedded-app-in-your-partner-account)
-  - [Update App API Scopes](#update-app-api-scopes)
-  - [Start the server](#start-the-server)
-  - [Update App's Allowed redirection URL(s) configuration](#update-apps-allowed-redirection-urls-configuration)
-  - [Install the app in your test store](#install-the-app-in-your-test-store)
-  - [Set up the App Proxy extension](#set-up-the-app-proxy-extension)
-  - [Verify if the embedded app is running](#verify-if-the-embedded-app-is-running)
-  - [Register the Theme app extension to your app](#register-the-theme-app-extension-to-your-app)
-  - [Set up theme support detection for the Getting Started page](#set-up-theme-support-detection-for-the-getting-started-page)
-  - [Register the Post-Purchase Checkout Extension to your app](#register-the-post-purchase-checkout-extension-to-your-app)
-  - [[Optional] Add an admin link extension for your app](#optional-add-an-admin-link-extension-for-your-app)
+- [0. Requirements](#0-requirements)
+- [1. Clone the repo and install Node.js dependencies](#1-clone-the-repo-and-install-node-js-dependencies)
+- [2. Create an app in your Partner account](#2-create-an-app-in-your-partner-account)
+- [3. Connect to the app with the Shopify CLI](#3-connect-to-the-app-with-the-shopify-cli)
+- [4. Update API Scopes](#4-update-app-api-scopes)
+- [5. Start the application locally](#5-start-the-application-locally)
+- [6.Update App's Allowed redirection URL(s) configuration](#6-update-apps-allowed-redirection-urls-configuration)
+- [7. Install the app in your test store](#7-install-the-app-in-your-test-store)
+- [8. Set up the App Proxy extension](#8-set-up-the-app-proxy-extension)
+- [9. Verify if the embedded app is running](#9-verify-if-the-embedded-app-is-running)
 
-## Requirements
+### 0. Requirements
 
-- Create a [Shopify Partner Account](https://www.shopify.ca/partners)
-- Create a [Shopify Development Store](https://help.shopify.com/en/partners/dashboard/managing-stores/development-stores)
-- Ensure to install the [Shopify App CLI](https://shopify.dev/apps/tools/cli/installation).
-- Install [ngrok](https://ngrok.com), in order to create a secure tunnel to your app running on your localhost.
+> :book: We recommend going through the entirety of our [Apps overview](https://shopify.dev/apps/getting-started) guide before going through this tutorial.
 
-## Install dependencies
+#### Shopify Account Requirements
 
-> NOTE: This sample application has been written and tested with Node.js v16.
+- If you don’t have one, [create a Shopify partner account](https://partners.shopify.com/signup).
+- If you don’t have one, [create a Development store](https://help.shopify.com/en/partners/dashboard/development-stores#create-a-development-store) where you can install and test your app.
 
-In your terminal run to install dependencies
+#### Framework and Tools Requirements
+
+- Install [Node.js](https://nodejs.org/en/download/) on your machine.
+- Install [ngrok](https://ngrok.com), in order to create a secure tunnel to your app running on your machine.
+- Install the [Shopify App CLI](https://shopify.dev/apps/tools/cli/installation).
+
+> This sample application has been written and tested with Node.js v14 and v16. There are known problems with v17.
+
+## 1. Clone the repo and install Node.js dependencies
+
+_To run this application locally we to get the source code and install the libraries it uses. Let's do that in this step._
+
+Launch a terminal and clone this repo:
+
+```bash
+git clone https://github.com/Shopify/product-reviews-sample-app
+cd product-reviews-sample-app
+```
+
+And install the Node.js dependencies:
 
 ```bash
 npm install
 ```
 
-## Connect to an embedded app in your Partner account
+## 2. Create an app in your Partner account
 
-- Visit your [Partner Account dashboard](https://partners.shopify.com/organizations), go to the `Apps` page and click `Create App`.
+_Once we have an application running locally we'll need to make sure Shopify knows about the application too. This step goes through steps for setting up an application with Shopify Partners, a platform where all app developers must register their applications._
+
+- Visit your [Partner Account dashboard](https://partners.shopify.com/organizations).
+- Go to the `Apps` page and click `Create App`.
 - Select `Public App`, and choose a name for your app.
 - In the `App URL` field enter any url for now (e.g: `https://localhost:3000/`), as this will be automatically updated in the next step.
 - Do the same for `Allowed redirection URL(s)`, except add `/auth/callback` to the path like so: `https://localhost:3000/auth/callback`.
 - Click `Create App` to confirm.
 
-In the terminal, complete the following steps:
+> :question: **Having issues?** Check out these our [documentation on creating apps](https://help.shopify.com/en/api/tools/partner-dashboard/your-apps#create-a-new-app).
 
-Run the Shopify CLI command to login to your Partner Account
+## 3. Connect to the app with the Shopify CLI
+
+_It's now time to connect the two previous steps. We'll make the code we have locally be associated with the application that we just registered through the Shopify Partner's platform._
+
+Back in a terminal, run the `shopify login` command to log into your Partner Account. A URL will print to the terminal, open it in a browser to authenticate.
 
 ```bash
-# optionally pass `--shop=YOUR_SHOP` flag to specify your test store
-
 shopify login
+# optionally pass `--shop=YOUR_SHOP` flag to specify your test store
 ```
 
-Open the printed url in the browser to authenticate.
-
-Run the Shopify CLI command to connect the repo to the newly created app in the partner dashboard.
+Run the `shopify app connect` command to associate the local code to the newly created app:
 
 ```bash
 shopify app connect
@@ -68,159 +84,100 @@ You will be prompted to answer the following questions:
 - `To which app does this project belong?` (Select the app you just created in your partner account dashboard).
 - `Which development store would you like to use?` (This will only appear if you did not use the `--shop` flag above).
 
-This step automatically creates a `.env` file in the project root, with `SHOPIFY_API_KEY`, `SHOPIFY_API_SECRET`, `SHOP` and `SCOPES` values. The `SHOPIFY_API_KEY` and `SHOPIFY_API_SECRET` can also be found in your app settings in your Partner account. `SCOPES` are set to default values. See [here](https://shopify.dev/api/usage/access-scopes) for the list of scope options.
+**What just happened?**
 
-## Update App API Scopes
+A crucial step happens behind the scenes when the `shopify app connect` is run successfully. This step will automatically create a `.env` file in the project root. The file will have a `SHOPIFY_API_KEY`, `SHOPIFY_API_SECRET`, `SHOP` and `SCOPES` values. The `SHOPIFY_API_KEY` and `SHOPIFY_API_SECRET` can also be found in the app settings of your Partner account. `SCOPES` are set to default values. See the [documentation on access scopes](https://shopify.dev/api/usage/access-scopes) for the list of scope options.
 
-Add `read_themes` to the `SCOPES` variable your main app `.env` file. This is needed so the app can check if a merchant's theme supports App Blocks.
+## 4. Update API Scopes
 
-## Start the server
+_The application we're building will need additional permissions than the default given when creating an app. For that reason we need to edit the `.env` files._
 
-Start the server by running Shopify CLI command and answer the prompts:
+Open the `.env` file using your favorite editor and add `read_themes` to the `SCOPES` variable. This is needed so the app can check if a merchant's theme supports App Blocks. Here's what a `.env` file should look like:
+
+```ini
+SHOPIFY_API_KEY=<Your app API key. You can find this in your partner dashboard>
+SHOPIFY_API_SECRET=<Your app API secret You can find this in your partner dashboard>
+SHOP=<Your shop where you test this app>
+SCOPES=write_products,write_customers,write_draft_orders,read_themes
+```
+
+## 5. Start the application locally
+
+_It's finally time to start running our application locally. Under the covers this will use `ngrok` to start a tunnel so the locally run application can be reached from the wider internet._
+
+To start the server, run the `shopify app serve` command and answer the prompts:
 
 ```bash
 shopify app serve
 ```
 
-- `Do you want to convert <your-store>.myshopify.com to a development store?`
-  This allows you to install a draft app in your test store.
-  ❗️ **NOTE:** the store can not be converted back to a live store once you do this
-- `Do you want to update your application url?` Choose "yes".
+- `Do you want to convert <your-store>.myshopify.com to a development store?` (Choose yes)
+- `Do you want to update your application url?` (Choose "yes")
 
-This step will automatically add the `HOST` to your .env, which matches the url of the `ngrok` tunnel which has been created for you, as well as update the app url in the partner dashboard.
+> :grey_exclamation: This step will automatically add a `HOST` key to your `.env` file. It will match the URL of the `ngrok` tunnel was created when you ran the last command. **_The command will also update the app URLs in the partner dashboard_**.
 
-## Update App's Allowed redirection URL(s) configuration
+## 6. Update allowed redirection URLs
 
-Go back to your _Partner Account dashboard_ > _Apps_ > _your App_ > _App setup_. The `App URL` should now match the tunnel url. You will need to manually update the urls in the `Allowed redirection URL(s)`, to support the online/offline access modes we have set up in this app:
+_Before we install the application we need to ensure the allowed redirection URL in the application's configuration is correct. Not having these values set up correctly will result in an installation failure as the OAuth handshake will not succeed._
+
+From the Partner Dashboard, navigate to the app setup by going to: _Apps_ > _Your App_ > _App setup_.
+
+The `App URL` should now match the tunnel URL.
 
 ```
-{YOUR_TUNNEL_URL}/offline/auth/callback
-{YOUR_TUNNEL_URL}/online/auth/callback
-{YOUR_TUNNEL_URL}/auth/callback (replace the dummy value from step 2)
+<YOUR_TUNNEL_URL>
+```
+
+The `Allowed redirection URL(s)` should be updated and match the example below:
+
+```
+<YOUR_TUNNEL_URL>/offline/auth/callback
+<YOUR_TUNNEL_URL>/online/auth/callback
+<YOUR_TUNNEL_URL>/auth/callback
 ```
 
 And then click `Save`.
 
-## Install the app in your test store
+## 7. Set up the App Proxy extension
 
-Go back to the terminal and you will see that there was a url printed after you ran `shopify app serve`. Visit this url, where you will be prompted to install the app on your test store. Or click `Test you app` on the app page of the Partner Dashboard.
-
-```
-https://{YOUR_TUNNEL_URL}/auth?shop={YOUR_SHOP}
-```
-
-Before you start building your app, you'll need to perform the steps below.
-
-## Set up the App Proxy extension
+_As a best-practise we want to ensure traffic to our application is coming from Shopify servers, to do that we need to set up an app proxy. _
 
 To configure the App Proxy extension follow the steps below.
 
-- Follow the steps listed in [Display dynamic store data with app proxies - Add an app proxy](https://shopify.dev/apps/online-store/app-proxies#add-an-app-proxy).
-- Set the Sub path field to `prapp`.
-- Set the Proxy URL field to `{YOUR_TUNNEL_URL/api}`.
-- Click `Save`.
+1. From your Partner Dashboard, click Apps.
+2. Click the name of your app.
+3. Click App setup.
+4. Navigate to the App proxy section.
+5. In the App proxy section, add the following:
 
-## Verify if the embedded app is running
+   - _Subpath prefix_: `apps`
+   - _Subpath_: `prapp`
+   - _Proxy URL_: `{YOUR_TUNNEL_URL/api}`
 
-Verify that the embedded app is running by navigating to _your test shop admin page_ > _apps_ > your new app
+6. Click `Save`.
 
-## Register the Theme app extension to your app
+## 8. Install the app in your test store
 
-- Create a `.env` file in the root of the `theme-app-extension` folder  
-  Note: if you were creating a new extension this would get automatically generated, but since we are registering an existing one we must create it ourselves.
+_With our application running locally and configured correctly we can now install the application on our test store._
 
-  ```bash
-  cd theme-app-extension && touch .env
-  ```
+There are two ways to do this:
 
-- Add the following environment variables to the `.env` to connect the extension to your app:
+1. Go back to the terminal and you will see that there was a URL printed after you ran `shopify app serve`. Visit this URL and you will be prompted to install the app on your test store. The URL will look like the example below, note the `auth` route in the URL.
 
-  ```
-  # Your app's API Key. You can find this in your partner dashboard
-  SHOPIFY_API_KEY=1234
-  # Your app's API. Secret You can find this in your partner dashboard
-  SHOPIFY_API_SECRET=abcdefg
-  # This can be whatever you want
-  EXTENSION_TITLE=my-theme-extension
-  ```
+   ```
+   https://{YOUR_TUNNEL_URL}/auth?shop={YOUR_SHOP}
+   ```
 
-Make sure you are logged in by running the Shopify CLI command
+or
 
-```bash
-shopify login --shop=your-test-shop-name.myshopify.com
+2. Click on the `Test you app` button on the app page of the Partner Dashboard to start the install process.
 
-#or
-shopify whoami
-```
+## 9. Verify the embedded app is running
 
-Register the extension by running the Shopify CLI command
+To verify that the embedded app is running navigate to _your test shop_ > _apps_ > _your app name_. From there you'll be presented with an option to create reviews. Click on the `Create Review` button and start reviewing your products. By default all reviews will be in an **unpublished** state. From this view you'll also have the ability to **publish** reviews so they appear on the online store.
 
-```bash
-shopify extension register
-```
+![](images/embedded-app-final.png)
 
-Push the extension by running to Shopify by running the Shopify CLI command
+## Summary
 
-```bash
-shopify extension push
-```
-
-You should now see the extension in your app page in your Partner Dashboard under _Extensions_ > _Online Store_.
-
-## Set up theme support detection for the Getting Started page
-
-- Add a new variable `THEME_APP_EXTENSION_UUID` to your app's `.env` (in the project root). Set the value to the same as `EXTENSION_UUID` in `theme-app-extension/.env`. This will allow the app to check which blocks have already been added to the merchant's Product Pages using the theme editor.
-- Add a Navigation Link to the `/getting-started` route via the Partner Dashboard: App Setup > Embedded App (Manage) > Navigation (Configure) > Add Navigation Link
-
-## Register the Post-Purchase Checkout Extension to your app
-
-- Follow the same process as with the Theme app extension ([Register the Theme app extension to your app](#register-the-theme-app-extension-to-your-app)), but from inside the `checkout-extension` folder.
-
-```bash
-cd checkout-extension && touch .env
-```
-
-Add the following environment variables to the `.env` to connect the extension to your app:
-
-```
-# Your app's API Key. You can find this in your partner dashboard
-SHOPIFY_API_KEY=1234
-# Your app's API. Secret You can find this in your partner dashboard
-SHOPIFY_API_SECRET=abcdefg
-# This can be whatever you want
-EXTENSION_TITLE=my-checkout-extension
-```
-
-Install the command line tool
-
-```bash
-npm install @shopify/admin-ui-extensions-run@latest --save-dev
-```
-
-Register the extension by running the Shopify CLI command
-
-```bash
-shopify extension register
-```
-
-Push the extension by running to Shopify by running the Shopify CLI command
-
-```bash
-shopify extension push
-```
-
-- You should now see the extension in your app page in your Partner Dashboard under Extensions > Checkout.
-
-## [Optional] Add an admin link extension for your app
-
-To add a deep link to the app from the product detail admin pages, follow these steps:
-
-- Go to your partner dashboard and select this app and click `Extensions`
-- Under `Extensions` select `Admin links` and click `Add Link`
-- You'll be presented with the form. Add `{YOUR_TUNNEL_URL/products}` as a link and select `Product details` from `Page show link` dropdown.
-- Set `Link label` text - this will be link text in product details page that will link to `{YOUR_TUNNEL_URL/products}`.
-- Click Save.
-
-This works by adding product id to the link query(`?id={product_id}`) which then is used to redirect from `/products` to `products/{id}`.
-
-❗️ **NOTE:** If you skip this step, everything will still work as intended, just no product reviews link will be available in the product details admin pages.
+Congratulations! If you've reached this step you've deployed the product reviews application. Go to the next step, [Adding a Theme Extension](theme-app-extension), to extend your online store to see reviews on product pages.

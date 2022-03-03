@@ -1,5 +1,7 @@
 # Technical Details
 
+To compliment the tutorials above, we have documented additional information about how various parts of the application work.
+
 ## Table of contents
 
 - [Authentication](authentication.md)

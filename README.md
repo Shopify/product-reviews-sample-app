@@ -47,57 +47,23 @@ When using this code keep in mind:
 1. This is a sample application. It is not production-ready.
 2. Metafields are going to be a bigger part of the platform and will support building applications with more complex data structures.
 
-## Requirements
+## Tutorials and Instructions
 
-- We recommend going through the entirety of our [Apps overview](https://shopify.dev/apps/getting-started) guide to get familiar with how our tooling works.
-- If you don’t have one, [create a Shopify partner account](https://partners.shopify.com/signup).
-- If you don’t have one, [create a Development store](https://help.shopify.com/en/partners/dashboard/development-stores#create-a-development-store) where you can install and test your app.
-- In the Partner dashboard, [create a new app](https://help.shopify.com/en/api/tools/partner-dashboard/your-apps#create-a-new-app). You’ll need this app’s API credentials during the setup process.
+Instructions are provided to show how to setup and run the various components of this code repo. Click on each one to follow an in-depth tutorial.
 
-## Getting started
+- **[Installing the embedded Node.js application](docs/getting-started.md)**
+- **[Extending the app with a Theme Extension](docs/theme-app-extension.md)**
+- **[Add a Post-Purchase Checkout Extensions](docs/checkout-extension-post-purchase.md)**
 
-You can follow our [getting started guide](docs/getting-started.md), which will provide instructions on how to setup and run the Product Reviews sample application.
+## Technical Details
 
-- [Getting started](docs/getting-started.md)
+To compliment the tutorials above, we have documented additional information about how various parts of the application work.
 
-  - [Install dependencies](docs/getting-started.md#install-dependencies)
-  - [Connect to an embedded app in your Partner account](docs/getting-started.md#connect-to-an-embedded-app-in-your-partner-account)
-  - [Start the server](docs/getting-started.md#start-the-server)
-  - [Update App's Allowed redirection URL(s) configuration](docs/getting-started.md#update-apps-allowed-redirection-urls-configuration)
-  - [Install the app in your test store](docs/getting-started.md#install-the-app-in-your-test-store)
-  - [Set up the App Proxy extension](docs/getting-started.md#set-up-the-app-proxy-extension)
-  - [Verify if the embedded app is running](docs/getting-started.md#verify-if-the-embedded-app-is-running)
-  - [Register the Theme app extension to your app](docs/getting-started.md#register-the-theme-app-extension-to-your-app)
-  - [Set up theme support detection for the Getting Started page](docs/getting-started.md#set-up-theme-support-detection-for-the-getting-started-page)
-  - [Register the Post-Purchase Checkout Extension to your app](docs/getting-started.md#register-the-post-purchase-checkout-extension-to-your-app)
-  - [[Optional] Add an admin link for your app](docs/getting-started.md#optional-add-an-admin-link-for-your-app)
-
-- [Theme App Extension](docs/theme-app-extension.md)
-
-  - [Authenticate](docs/theme-app-extension.md#authenticate)
-  - [Create an extension](docs/theme-app-extension.md#create-an-extension)
-  - [Register an extension](docs/theme-app-extension.md#register-an-extension)
-  - [Push the extension](docs/theme-app-extension.md#push-the-extension)
-  - [Publish](docs/theme-app-extension.md#publish)
-  - [Common errors](docs/theme-app-extension.md#common-errors)
-
-- [Checkout Extension Post-Purchase](docs/checkout-extension-post-purchase.md)
-
-  - [Running the checkout extension locally](docs/checkout-extension-post-purchase.md#running-the-checkout-extension-locally)
-    - [Install dependencies](docs/checkout-extension-post-purchase.md#install-dependencies)
-    - [Set up environment](docs/checkout-extension-post-purchase.md#set-up-environment)
-    - [Start the server](docs/checkout-extension-post-purchase.md#start-the-server)
-    - [Set up the browser extension](docs/checkout-extension-post-purchase.md#set-up-the-browser-extension)
-  - [Publishing](docs/checkout-extension-post-purchase.md#publishing)
-  - [Scaffolding New Checkout Extensions](docs/checkout-extension-post-purchase.md#scaffolding-new-checkout-extensions)
-  - [Additional Resources](docs/checkout-extension-post-purchase.md#additional-resources)
-
-- [Technical details](docs/technical-details/README.md)
-  - [Authentication](docs/technical-details/authentication.md)
-  - [Data layer](docs/technical-details/data-layer.md)
-  - [Review creation](docs/technical-details/review-creation.md)
-  - [Product average rating calculation](docs/technical-details/product-average-rating-calc.md)
-  - [Publishing / Unpublishing reviews](docs/technical-details/publishing-reviews.md)
+- [Authentication](docs/technical-details/authentication.md)
+- [Data layer](docs/technical-details/data-layer.md)
+- [Review creation](docs/technical-details/review-creation.md)
+- [Product average rating calculation](docs/technical-details/product-average-rating-calc.md)
+- [Publishing / Unpublishing reviews](docs/technical-details/publishing-reviews.md)
 
 ## Tools Used
 
