@@ -6,13 +6,9 @@ This sample app was built as a reference to show how Shopify Developer tools can
 
 The application is written in [Node.js](https://nodejs.org/) and is comprised of the following elements:
 
-- **[Embedded Node.js application](https://shopify.dev/apps/getting-started/create)**: Which displays an admin UI for managing (publishing, unpublishing, deleting) product reviews.
-- **[Theme app extension](https://shopify.dev/apps/online-store/theme-app-extensions)**: Which enables a merchant to display review information, per product, to their online store.
-- **[Post-purchase checkout extension](https://shopify.dev/apps/checkout/post-purchase)**: Which prompts a user to submit a review directly after making a purchase.
-
-The application leverages the following Shopify APIs:
-
-- To store reviews the application makes use of [Metafields](https://shopify.dev/apps/metafields) to store data, which do not require a database to be set up.
+- **[Embedded Node.js application](https://shopify.dev/apps/getting-started/create)**: Displays an admin UI for managing (publishing and unpublishing) reviews.
+- **[Theme app extension](https://shopify.dev/apps/online-store/theme-app-extensions)**: Enables review information to be displayed to an online store.
+- **[Post-purchase checkout extension](https://shopify.dev/apps/checkout/post-purchase)**: Prompts user to submit a review directly after making a purchase.
 
 Refer to the architecture diagram below to see how the application's components and Shopify interact with each other.
 
@@ -40,14 +36,7 @@ flowchart
      class feedback,pc orange
 ```
 
-## Limitations
-
-When using this code keep in mind:
-
-1. This is a sample application. It is not production-ready.
-2. Metafields are going to be a bigger part of the platform and will support building applications with more complex data structures.
-
-## Tutorials and Instructions
+## Tutorials and Instructions 📖
 
 Instructions are provided to show how to setup and run the various components of this code repo. Click on each one to follow an in-depth tutorial.
 
@@ -55,7 +44,7 @@ Instructions are provided to show how to setup and run the various components of
 - **[Extending the app with a Theme Extension](docs/theme-app-extension.md)**
 - **[Add a Post-Purchase Checkout Extensions](docs/checkout-extension-post-purchase.md)**
 
-## Technical Details
+## Technical Details 💻
 
 To compliment the tutorials above, we have documented additional information about how various parts of the application work.
 
@@ -65,7 +54,14 @@ To compliment the tutorials above, we have documented additional information abo
 - [Product average rating calculation](docs/technical-details/product-average-rating-calc.md)
 - [Publishing / Unpublishing reviews](docs/technical-details/publishing-reviews.md)
 
-## Tools Used
+## Limitations ❕
+
+When using this code keep in mind:
+
+1. This is a sample application. It is not production-ready.
+2. Metafields are going to be a bigger part of the platform and will support building applications with more complex data structures.
+
+## APIs and Tools Used 🛠️
 
 ### GraphQL
 
@@ -85,13 +81,17 @@ Metafields represent custom metadata attached to a resource (for example, a shop
 
 _for more information on Metafields, [check out our guide](https://shopify.dev/apps/metafields)._
 
-### Theme App Extensions - App Blocks
+### Theme App Extensions
 
-[Theme app extensions](https://shopify.dev/apps/online-store/theme-app-extensions) let you extend themes via app blocks. App blocks are liquid files that contain code, a schema and static resource dependencies (CSS, JS). They can be added to existing theme sections or as full-width content on the page. App blocks can also be reordered, removed and configured by merchants directly from the theme editor. Theme app extensions do not modify a theme’s code, are served by Shopify, and can be cleanly uninstalled without leaving ghost code behind.
+Theme app extensions let you extend themes via app blocks. App blocks are liquid files that contain code, a schema and static resource dependencies (CSS, JS). They can be added to existing theme sections or as full-width content on the page. App blocks can also be reordered, removed and configured by merchants directly from the theme editor. Theme app extensions do not modify a theme's code, are served by Shopify, and can be cleanly uninstalled without leaving ghost code behind.
 
-### Checkout Extension - Post-Purchase
+_for more information on Theme App Extensions, [check out our guide](https://shopify.dev/apps/online-store/theme-app-extensions)._
+
+### Post-Purchase Checkout Extension
 
 Post-purchase checkout extensions give developers and Plus merchants the ability to add post-purchase interactions directly into the Shopify checkout. A post-purchase page displays a customizable UI to a buyer after their order is confirmed, but before the thank you page.
+
+_for more information on Post-Purchase Checkout Extensions, [check out our guide](https://shopify.dev/apps/checkout/post-purchase)._
 
 ## Contributing
 
