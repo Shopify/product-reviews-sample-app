@@ -55,7 +55,7 @@ shopify login --shop=your-test-shop-name.myshopify.com
 
 ## Register an extension
 
-_Run `shopify extension register` to register your Theme App Extension under your app. It will then appear in your Shopify Partners dashboard under your App \_Extensions > Online Store > Theme App Extensions_. From there you can create versions of your extension or publish/unpublish them (until published merchants won't be able to use those versions of the extension).\_
+_Run `shopify extension register` to register your Theme App Extension under your app. It will then appear in your Shopify Partners dashboard under your App \_Extensions > Online Store > Theme App Extensions_. From there you can enable 'DEVELOPMENT STORE PREVIEW' while you are building your extension. When you are ready to release your theme app extension create you can release versions or publish/unpublish them in the same spot. Until published other merchants won't be able to use those versions of the extension.\_
 
 Register the extension by running the Shopify CLI command
 
@@ -65,7 +65,7 @@ shopify extension register
 
 ## Push the extension
 
-From this point you can either push existing sample code of Theme App Extension to make it available for new version creation and also usage in development stores, or you can first modify/create your blocks, snippets and etc., and then push them (and create version, or publish if needed). Pushing is done using: `shopify extension push` command.
+From this point you can either push existing sample code of Theme App Extension to make it available for new version creation and also usage in development stores, or you can first modify/create your blocks, snippets and etc., and then push them (and create version, or publish if needed). Pushing is done using: `shopify extension push` command. If you have Development Store Preview enabled you will be able to see your changes immediately after pushing.
 
 Push the extension by running to Shopify by running the Shopify CLI command
 
