@@ -7,7 +7,7 @@ import {
   Provider as AppBridgeProvider,
   useAppBridge,
 } from "@shopify/app-bridge-react";
-import "@shopify/polaris/dist/styles.css";
+import "@shopify/polaris/build/esm/styles.css";
 import translations from "@shopify/polaris/locales/en.json";
 import { fetch } from "lib/app-bridge";
 import { RoutePropagator, Link } from "components";
