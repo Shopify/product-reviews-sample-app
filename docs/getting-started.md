@@ -60,6 +60,8 @@ _Once we have an application running locally we'll need to make sure Shopify kno
 - Do the same for `Allowed redirection URL(s)`, except add `/auth/callback` to the path like so: `https://localhost:3000/auth/callback`.
 - Click `Create App` to confirm.
 
+![create app](images/create-app.png)
+
 > :question: **Having issues?** Check out these our [documentation on creating apps](https://help.shopify.com/en/api/tools/partner-dashboard/your-apps#create-a-new-app).
 
 ## 3. Connect to the app with the Shopify CLI
@@ -114,7 +116,7 @@ shopify app serve
 - `Do you want to convert <your-store>.myshopify.com to a development store?` (Choose yes)
 - `Do you want to update your application url?` (Choose "yes")
 
-> :grey_exclamation: This step will automatically add a `HOST` key to your `.env` file. It will match the URL of the `ngrok` tunnel was created when you ran the last command. **_The command will also update the app URLs in the partner dashboard_**.
+> :grey*exclamation: This step will automatically add a `HOST` key to your `.env` file. It will match the URL of the `ngrok` tunnel was created when you ran the last command. \*\*\_The command will also update the app URLs in the partner dashboard*\*\*.
 
 ## 6. Update allowed redirection URLs
 
@@ -140,7 +142,7 @@ And then click `Save`.
 
 ## 7. Set up the App Proxy extension
 
-_As a best-practise we want to ensure traffic to our application is coming from Shopify servers, to do that we need to set up an app proxy. _
+_As a best-practise we want to ensure traffic to our application is coming from Shopify storefronts, to do that we need to set up an app proxy. _
 
 To configure the App Proxy extension follow the steps below.
 
