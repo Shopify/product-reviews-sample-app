@@ -4,18 +4,17 @@ This document contains steps on how to setup and install the embedded Node.js ap
 
 ## Table of contents
 
-- [0. Requirements](#0-requirements)
-- [1. Clone the repo and install Node.js dependencies](#1-clone-the-repo-and-install-node-js-dependencies)
-- [2. Create an app in your Partner account](#2-create-an-app-in-your-partner-account)
-- [3. Connect to the app with the Shopify CLI](#3-connect-to-the-app-with-the-shopify-cli)
-- [4. Update API Scopes](#4-update-app-api-scopes)
-- [5. Start the application locally](#5-start-the-application-locally)
-- [6.Update App's Allowed redirection URL(s) configuration](#6-update-apps-allowed-redirection-urls-configuration)
-- [7. Install the app in your test store](#7-install-the-app-in-your-test-store)
-- [8. Set up the App Proxy extension](#8-set-up-the-app-proxy-extension)
-- [9. Verify if the embedded app is running](#9-verify-if-the-embedded-app-is-running)
+1. [Clone the repo and install Node.js dependencies](#1-clone-the-repo-and-install-nodejs-dependencies)
+1. [Create an app in your Partner account](#2-create-an-app-in-your-partner-account)
+1. [Connect to the app with the Shopify CLI](#3-connect-to-the-app-with-the-shopify-cli)
+1. [Update API Scopes](#4-update-api-scopes)
+1. [Start the application locally](#5-start-the-application-locally)
+1. [Update allowed redirection URLs](#6-update-allowed-redirection-urls)
+1. [Set up the App Proxy extension](#7-set-up-the-app-proxy-extension)
+1. [Install the app in your test store](#8-install-the-app-in-your-test-store)
+1. [Verify the embedded app is running](#9-verify-the-embedded-app-is-running)
 
-### 0. Requirements
+### Requirements
 
 > :book: We recommend going through the entirety of our [Apps overview](https://shopify.dev/apps/getting-started) guide before going through this tutorial.
 
@@ -116,7 +115,7 @@ shopify app serve
 - `Do you want to convert <your-store>.myshopify.com to a development store?` (Choose yes)
 - `Do you want to update your application url?` (Choose "yes")
 
-> :grey*exclamation: This step will automatically add a `HOST` key to your `.env` file. It will match the URL of the `ngrok` tunnel was created when you ran the last command. \*\*\_The command will also update the app URLs in the partner dashboard*\*\*.
+> :grey_exclamation: This step will automatically add a `HOST` key to your `.env` file. It will match the URL of the `ngrok` tunnel was created when you ran the last command. ***The command will also update the app URLs in the partner dashboard.***
 
 ## 6. Update allowed redirection URLs
 
@@ -142,7 +141,7 @@ And then click `Save`.
 
 ## 7. Set up the App Proxy extension
 
-_As a best-practise we want to ensure traffic to our application is coming from Shopify storefronts, to do that we need to set up an app proxy. _
+_As a best-practise we want to ensure traffic to our application is coming from Shopify storefronts, to do that we need to set up an app proxy._
 
 To configure the App Proxy extension follow the steps below.
 
