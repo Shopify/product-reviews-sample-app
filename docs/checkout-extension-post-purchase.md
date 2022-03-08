@@ -1,44 +1,54 @@
-# Post-Purchase Checkout Extensions
+# Installing the Post-Purchase Checkout Extensions
 
-Post-Purchase Checkout Extensions allow merchants to display an additional page between the checkout payment page and the thank-you page, prompting the customer to complete some additional action. In the case of this app, the extension asks the customer to submit a review for the product they just bought.
+This document contains steps on how to setup and install the post-purchase checkout extension for the Node.js application that was installed in the previous step. Each step in this document begins with a reason for why we're doing that step (_usually written like this_), then some instructions for the reader to perform.
 
-If you create a post-purchase checkout extension for your app, it will provide an option to display this additional page to any customer of a store that has your app installed.
+### About Post-Purchase Checkout Extensions
 
-If you want to test the Post-Purchase Checkout Extension locally, you must run it separately. Please note this is only necessary when testing locally, since the published extensions are hosted by Shopify.
+Post-Purchase Checkout Extensions allow merchants to **display an additional page between the checkout payment page and the thank-you page**, prompting the customer to complete some additional action. In the case of this app, the extension asks the customer to submit a review for the product they just bought.
+
+_The code for the post-checkout extension used for this repository is in the [checkout-extension](/checkout-extension) directory._
 
 ## Table of contents
 
-- [Checkout Extension Post-Purchase](#checkout-extension-post-purchase)
-  - [Running the checkout extension locally](#running-the-checkout-extension-locally)
-    - [Install dependencies](#install-dependencies)
-    - [Set up environment](#set-up-environment)
-    - [Start the server](#start-the-server)
-    - [Set up the browser extension](#set-up-the-browser-extension)
-  - [Publishing](#publishing)
-  - [Scaffolding New Checkout Extensions](#scaffolding-new-checkout-extensions)
-  - [Additional Resources](#additional-resources)
+1. [Authenticate with the CLI](#1-authenticate-with-the-cli)
+1. [Create a `.env` file](#2-create-env-file)
+1. [Install the `checkout-ui-extension-run` library](#3-install-the-checkout-ui-extension-run-library)
+1. [Update `embeddedAppHost` variable](#4-update-embeddedapphost-variable)
+1. [Register the extension](#5-register-the-extension)
+1. [Push the extension](#6-push-the-extension)
+1. [Publish the extension](#7-publish-the-extension)
+1. [Enable the extension](#8-enable-the-extension)
+1. [Verify the extension](#9-verify-the-extension)
 
-## Authenticate
+## 1. Authenticate with the CLI
 
-Run `shopify login` command. If you have multiple accounts add `--shop` flag like this, to specify development store on which you'll test, like this: `shopify login --shop=your-shop-name.myshopify.com`.
+_Before registering our extension with our store we should ensure the `shopify` CLI is authenticated._
 
-Command will give you authentication URL that you need to open in the browser. Once it authenticates you can return to Terminal where you ran initial CLI command.
+Run the `shopify login` command. The command will return a URL that you need to open in a browser. Once authenticated you can return to the terminal.
 
-Make sure you are logged in by running the Shopify CLI command
+```bash
+shopify login
+```
+
+If you have multiple accounts add a `--shop=<shop-url>` flag like this:
 
 ```bash
 shopify login --shop=your-test-shop-name.myshopify.com
 ```
 
-## Register the Post-Purchase Checkout Extension to your app
+## 2. Create a `.env` file
+
+_The extension we're building will need to an API key and secret. To supply these credentials create a `.env` file in the same directory as the extension._
+
+Go into the extension directory and create the `.env` file:
 
 ```bash
 cd checkout-extension && touch .env
 ```
 
-Add the following environment variables to the `.env` to connect the extension to your app:
+Add the following environment variables to the `.env` file:
 
-```
+```ini
 # Your app's API Key. You can find this in your partner dashboard or copy it from the node app .env
 SHOPIFY_API_KEY=1234
 # Your app's API. Secret You can find this in your partner dashboard or copy it from the node app .env
@@ -47,65 +57,78 @@ SHOPIFY_API_SECRET=abcdefg
 EXTENSION_TITLE=my-checkout-extension
 ```
 
-### Install dependencies
+### 3. Install the `checkout-ui-extension-run` library
 
-From the extension root folder, install the dependencies:
+_The step installs the [checkout-ui-extensions-run](https://www.npmjs.com/package/@shopify/checkout-ui-extensions-run) library, which adds functionality to the `shopify` CLI._
+
+From the `checkout-extension` folder, run the following command:
 
 ```bash
 npm install
 ```
 
-### Update the `embeddedAppHost` variable
+### 4. Update `embeddedAppHost` variable
 
-In the `src/index.js` file the variable `embeddedAppHost` is currently hardcoded. This needs to be updated to reflect the URL that `ngrok` generated.
+_The extension needs to know where the main application is being hosted, this is managed via a variable._
 
-## Register the extension
+Open the [`src/index.js`](/checkout-extension/src/index.js) file and update the variable `embeddedAppHost` to reflect the URL that `ngrok` generated. It should look like the following:
 
-Register the extension by running the Shopify CLI command
+```javascript
+const embeddedAppHost = "https://3db4-76-68-94-203.ngrok.io";
+```
+
+## 5. Register the extension
+
+_Registering your app extension associates it with an app in your Partner organization. This step should be done only once for each app extension._
+
+To register the extension, run the following command:
 
 ```bash
 shopify extension register
 ```
 
-## Push the extension
+## 6. Push the extension
 
-_This will build and compile a production version and push it to the Shopify CDN. (You should see that a build folder has been created with your minified code inside)._
+_Pushing the extension entails of building and compiling a production version of the extension, which is then pushed to the Shopify CDN. (You should see that a build folder has been created with your minified code inside)._
+
+To push the extension, run the following command:
 
 ```bash
 shopify extension push
 ```
 
-You should now see the extension in your app page in your Partner Dashboard under _Extensions_ > _<Your Checkout Name>_.
+## 7. Publish the extension
 
-## Publish the extension
+_When you're ready to release your extension you can publish it._
 
-Once your Theme App Extension code is ready for public use, push the latest code, head to _Extensions > Online Store > Post Check App Extensions_ under your App, click on the extension name, then click _Create Version_ button and once new version appears in your versions list simply click _Publish_ next to it.
+The publish the extension navigate to the following:
 
-## Enable the Post Checkout extension
+_***Partner Dashboard*** > Apps > ***Your App Name*** > Extensions > ***Your Checkout Extension Name***._
 
-One final step is to enable the checkout extension from the Store's admin settings. To do that, go to the _Store Admin Settings_ > _Checkout_ and select the extension you created.
+Once on the extension page, click on the **_Create version_** button and when the new version appears in the version list, click **_Publish_** next to it.
+
+> :exclamation: To save time, you can preview a draft of your app extension in a development store before creating a version by selecting the **_DEVELOPMENT STORE PREVIEW_** option from the extension's settings page. Note, merchants will not be able to see the changes until a version is published.
+
+## 8. Enable the extension
+
+_By default, extensions are not enabled for online stores, we'll need to change our store's setting to use our new extension._
+
+The enable the extension navigate to the following:
+
+_***Store Admin Settings*** > Checkout > ***Your Checkout Extension Name***_
 
 ![Checkout menu](images/pc-menu.png)
 
-## Verify the Post Checkout extension
+## 9. Verify the extension
 
-> :question: You'll need to setup your test store to accept _test_ orders. [Follow this short doc](https://help.shopify.com/en/manual/checkout-settings/test-orders)
+_The last step is to verify that the extension is working as-expected. :question: Note that you'll need to ***setup your test store to accept test orders***. [Follow this short doc](https://help.shopify.com/en/manual/checkout-settings/test-orders) to enable test orders._
 
-To verify the post checkout extension is working add a product from the store to your cart and check out. Pay using a bogus gateway and when the order is placed you'll be prompted to leave a rating and review.
+From your online store, add a product to your cart and checkout. Pay using a bogus gateway and when the order is placed you'll be prompted to leave a rating and review.
 
-> :exclamation: The extension will only be triggered when a product that **has a price** is purchased. It will not work with a free product.
+> :exclamation: The extension will only be triggered when a product **has a price**. It will not work with a free product.
 
 ![post checkout working](images/post-checkout-final.png)
 
-## Further information
+## Summary
 
-- [CLI Extension Commands](https://shopify.dev/apps/tools/cli/extension-commands)
-- [Extension Versioning](https://shopify.dev/apps/app-extensions#app-extension-versioning)
-
-## Scaffolding New Checkout Extensions
-
-The Shopify CLI will scaffold the extension when you run `shopify create extension --type=CHECKOUT_POST_PURCHASE --name="checkout-extension"`. This should be done inside your embedded app, so that the extension is built as a subdirectory.
-
-## Additional Resources
-
-[Post-Purchase Checkout Extension Documentation](https://shopify.dev/apps/checkout/post-purchase)
+:tada: Congratulations! If you've reached this step you've completed the last of the tutorials! Go forth and build!
