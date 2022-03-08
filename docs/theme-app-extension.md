@@ -108,7 +108,9 @@ A quick way to check if things are set up correctly is to perform the steps belo
 
 ## Summary
 
-Congratulations! If you've reached this step you've deployed the theme extension. Go to the next step, [Adding a Post Checkout Extension](checkout-extension-post-purchase), to add reviews after a customer has purchased a product.
+Congratulations! If you've reached this step you've deployed the theme extension. Go to the next step, [Adding a Post Checkout Extension](checkout-extension-post-purchase.md), to add reviews after a customer has purchased a product.
+
+---
 
 ## FAQ
 
