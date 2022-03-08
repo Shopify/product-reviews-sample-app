@@ -181,4 +181,4 @@ To verify that the embedded app is running navigate to _your test shop_ > _apps_
 
 ## Summary
 
-Congratulations! If you've reached this step you've deployed the product reviews application. Go to the next step, [Adding a Theme Extension](theme-app-extension), to extend your online store to see reviews on product pages.
+Congratulations! If you've reached this step you've deployed the product reviews application. Go to the next step, [Adding a Theme Extension](/docs/theme-app-extension), to extend your online store to see reviews on product pages.
