@@ -88,7 +88,7 @@ _***Partner Dashboard*** > Apps > ***Your App Name*** > Extensions > ***Your The
 
 Once on the extension page, click on the **_Create version_** button and when the new version appears in the version list, click **_Publish_** next to it.
 
-> :exclamation: To save time, you can preview a draft of your app extension in a development store before creating a version by selecting the **_DEVELOPMENT STORE PREVIEW_** option from the extension's settings page.
+> :exclamation: To save time, you can preview a draft of your app extension in a development store before creating a version by selecting the **_DEVELOPMENT STORE PREVIEW_** option from the extension's settings page. Note, merchants will not be able to see the changes until a version is published.
 
 ## 6. Verify the extension
 
