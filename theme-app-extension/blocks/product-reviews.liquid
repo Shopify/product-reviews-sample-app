@@ -1,7 +1,7 @@
 {{ 'style.css' | asset_url | stylesheet_tag }}
 {{ 'star-rating.css' | asset_url | stylesheet_tag }}
 
-{% assign avg_rating = block.settings.product.metafields.prapp.avg_rating | plus: 0 %}
+{% assign avg_rating = block.settings.product.metafields.reviews.rating.value.rating | plus: 0 %}
 {% assign reviews = block.settings.product.metafields.prapp-pub-reviews %}
 
 <div class="prapp-block" style="padding: {{ block.settings.padding_y }}px {{ block.settings.padding_x }}px;" data-product-id="{{ block.settings.product.id }}">

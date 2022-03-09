@@ -1,4 +1,4 @@
-{% assign avg_rating = block.settings.product.metafields.prapp.avg_rating | plus: 0 %}
+{% assign avg_rating = block.settings.product.metafields.reviews.rating.value.rating | plus: 0 %}
 
 {% if avg_rating > 0 %}
 <div class="prapp-average-block" style="padding: {{ block.settings.padding_y }}px {{ block.settings.padding_x }}px;" data-product-id="{{ block.settings.product.id }}">

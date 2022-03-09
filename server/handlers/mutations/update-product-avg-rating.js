@@ -1,14 +1,19 @@
 import "isomorphic-fetch";
 import { gql } from "apollo-boost";
 import { METAFIELD_DELETE, PRODUCT_METAFIELD_CREATE } from "../../../graphql";
-import { METAFIELD_KEY, METAFIELD_NAMESPACE } from "../../../constants";
+import {
+  METAFIELD_KEY,
+  METAFIELD_NAMESPACE,
+  MAX_RATING,
+  MIN_RATING,
+} from "../../../constants";
 
 const GET_PRODUCT_AVG_RATING_METAFIELD = gql`
   query GetProductAvgRatingMetafield($productId: ID!) {
     product(id: $productId) {
       avgRatingMetafield: metafield(
-        namespace: "${METAFIELD_NAMESPACE.general}",
-        key: "${METAFIELD_KEY.avgRating}"
+        namespace: "${METAFIELD_NAMESPACE.standardRating}",
+        key: "${METAFIELD_KEY.ratings}"
       ) {
         id
         key
@@ -43,10 +48,14 @@ export const updateProductAvgRating = async (client, productId, avgRating) => {
         id: productId,
         metafields: [
           {
-            namespace: METAFIELD_NAMESPACE.general,
-            key: METAFIELD_KEY.avgRating,
-            value: String(avgRating),
-            valueType: "STRING",
+            namespace: METAFIELD_NAMESPACE.standardRating,
+            key: METAFIELD_KEY.ratings,
+            value: JSON.stringify({
+              value: avgRating,
+              scale_min: MIN_RATING,
+              scale_max: MAX_RATING,
+            }),
+            valueType: "JSON_STRING",
           },
         ],
       },
