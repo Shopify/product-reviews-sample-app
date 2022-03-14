@@ -4,13 +4,15 @@ export const METAFIELD_NAMESPACE = {
   publicReviews: "prapp-pub-reviews",
   privateReviews: "prapp-pvt-reviews",
   messages: "prapp-messages",
+  standardRating: "reviews",
 };
 
 // graphql queries will add/delete/update data under these keys in the
 // METAFIELD_NAMESPACE.general namespace
 export const METAFIELD_KEY = {
-  ratings: "ratings",
+  ratings: "rating",
   avgRating: "avg_rating",
+  standardRatingCount: "rating_count",
 };
 
 // Event types used by the PRODUCTS_UPDATE webhook (server.js)
