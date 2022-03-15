@@ -15,7 +15,8 @@ _The code for the theme app extension used for this repository is in the [theme-
 1. [Register the extension](#3-register-the-extension)
 1. [Push the extension](#4-push-the-extension)
 1. [Publish the extension](#5-publish-the-extension)
-1. [Verify the extension](#6-verify-the-extension)
+1. [Add theme extension blocks](#6-add-theme-extension-blocks)
+1. [Verify the extension](#7-verify-the-extension)
 
 ## 1. Authenticate with the CLI
 
@@ -90,7 +91,21 @@ Once on the extension page, click on the **_Create version_** button and when th
 
 > :exclamation: To save time, you can preview a draft of your app extension in a development store before creating a version by selecting the **_DEVELOPMENT STORE PREVIEW_** option from the extension's settings page. Note, merchants will not be able to see the changes until a version is published.
 
-## 6. Verify the extension
+## 6. Add theme extension blocks
+
+_By default the online store's theme is not changed just because a new theme extension is published. We'll need to go to our theme editor and add the specific blocks we want to show._
+
+The enable the new theme blocks we need to launch the _Theme Editor_:
+
+_***Store Admin*** > Online Store > ***Themes*** > Customize_
+
+From within the the _Theme Editor_ click on any product to bring up a new selection of items in the left navigation bar.
+
+From the **_Apps_** block, choose to add the "**_Average Review Score_**" and the "**_Customer Reviews_**" sections. Save theme and exit the editor.
+
+![add theme blocks](images/theme-blocks.png)
+
+## 7. Verify the extension
 
 _The last step is to verify that the extension is working as-expected._
 
@@ -98,7 +113,7 @@ From your online store navigate to a product that has at least one published rev
 
 ![](images/theme-extension-final.png)
 
-## 7. (Optional) Add theme support detection to the embedded application
+## 8. (Optional) Add theme support detection to the embedded application
 
 A quick way to check if things are set up correctly is to perform the steps below. This will show if your theme and store can use the extension, the results will be shown in the embedded application.
 
