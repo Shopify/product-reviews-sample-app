@@ -20,8 +20,8 @@ export const GET_PRODUCT_BY_ID_QUERY = gql`
         originalSrc
       }
       avgRatingMetafield: metafield(
-        namespace: "${METAFIELD_NAMESPACE.general}",
-        key: "${METAFIELD_KEY.avgRating}"
+        namespace: "${METAFIELD_NAMESPACE.standardRating}",
+        key: "${METAFIELD_KEY.ratings}"
       ) {
         id
         value

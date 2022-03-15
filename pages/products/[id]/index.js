@@ -128,6 +128,7 @@ const ProductReviews = () => {
       );
 
     const productThumbnailUrl = product?.featuredImage?.originalSrc || "";
+    const avgRating = JSON.parse(product?.avgRatingMetafield?.value);
 
     return (
       <Layout.Section>
@@ -154,7 +155,7 @@ const ProductReviews = () => {
             <Stack.Item>
               <TextContainer spacing="tight">
                 <TextStyle variation="strong">Overall Rating</TextStyle>
-                <Rating value={product?.avgRatingMetafield?.value} />
+                <Rating value={avgRating.value} />
               </TextContainer>
             </Stack.Item>
           </Stack>
