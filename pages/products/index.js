@@ -17,6 +17,17 @@ import { useProducts } from "hooks";
 import { extractIdFromGid } from "utilities/metafields";
 
 const renderItem = ({ id, name, url, media, avgRating }) => {
+  let ratingToShow = 0;
+  try {
+    ratingToShow = JSON.parse(avgRating?.value).value;
+  } catch (e) {
+    console.log(
+      "Publish a review of",
+      name,
+      "to have the average review show."
+    );
+  }
+
   return (
     <ResourceList.Item
       id={id}
@@ -25,7 +36,7 @@ const renderItem = ({ id, name, url, media, avgRating }) => {
       accessibilityLabel={`View details for ${name}`}
     >
       <Heading element="h2">{name}</Heading>
-      <Rating value={avgRating} />
+      <Rating value={ratingToShow} />
     </ResourceList.Item>
   );
 };
@@ -67,7 +78,7 @@ const Products = () => {
   };
 
   const items = useMemo(() => {
-    return products.map(({ id, title, featuredImage, avgRating }) => ({
+    return products.map(({ id, title, featuredImage, avgRatingMetafield }) => ({
       id,
       name: title,
       url: `products/${extractIdFromGid(id)}`,
@@ -77,7 +88,7 @@ const Products = () => {
           alt={title}
         />
       ),
-      avgRating,
+      avgRating: avgRatingMetafield,
     }));
   }, [products]);
 

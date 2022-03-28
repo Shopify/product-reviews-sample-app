@@ -128,7 +128,14 @@ const ProductReviews = () => {
       );
 
     const productThumbnailUrl = product?.featuredImage?.originalSrc || "";
-    const avgRating = JSON.parse(product?.avgRatingMetafield?.value);
+    let avgRating = 0;
+    try {
+      avgRating = JSON.parse(product?.avgRatingMetafield?.value).value;
+    } catch (e) {
+      console.log(
+        "averageRating not yet set, this is expected, you must approve reviews first."
+      );
+    }
 
     return (
       <Layout.Section>
@@ -155,7 +162,7 @@ const ProductReviews = () => {
             <Stack.Item>
               <TextContainer spacing="tight">
                 <TextStyle variation="strong">Overall Rating</TextStyle>
-                <Rating value={avgRating.value} />
+                <Rating value={avgRating} />
               </TextContainer>
             </Stack.Item>
           </Stack>
