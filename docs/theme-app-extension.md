@@ -105,6 +105,8 @@ From the **_Apps_** block, choose to add the "**_Average Review Score_**" and th
 
 ![add theme blocks](images/theme-blocks.png)
 
+> :exclamation: Theme App Extensions can only integrate with Online Store 2.0 themes such as the default Dawn theme, which is Shopify's Online Store 2.0 reference theme.
+
 ## 7. Verify the extension
 
 _The last step is to verify that the extension is working as-expected._
