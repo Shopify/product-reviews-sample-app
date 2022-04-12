@@ -17,7 +17,7 @@ export const useProduceProductMessage = () => {
             type,
             data: { review_snapshot: reviewMetafield.value },
           }),
-          valueType: "JSON_STRING",
+          type: "json",
         },
       });
     },

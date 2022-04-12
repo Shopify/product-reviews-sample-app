@@ -49,7 +49,7 @@ export const ReviewForm = ({ productId, productInfo }) => {
         id: reviewId,
         state: "unpublished",
       }),
-      valueType: "JSON_STRING",
+      type: "json",
     };
   };
 

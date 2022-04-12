@@ -15,7 +15,7 @@ const GET_PRODUCT_QUEUE_MESSAGES = gql`
             id
             key
             value
-            valueType
+            type
           }
         }
       }

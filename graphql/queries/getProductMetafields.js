@@ -17,7 +17,7 @@ export const GET_PRODUCT_METAFIELDS_QUERY = gql`
             id
             key
             value
-            valueType
+            type
           }
         }
       }
