@@ -19,7 +19,7 @@ const GET_PRODUCT_AVG_RATING_METAFIELD = gql`
         key
         namespace
         value
-        valueType
+        type
       }
     }
   }
@@ -55,7 +55,7 @@ export const updateProductAvgRating = async (client, productId, avgRating) => {
               scale_min: MIN_RATING,
               scale_max: MAX_RATING,
             }),
-            valueType: "JSON_STRING",
+            type: "json",
           },
         ],
       },

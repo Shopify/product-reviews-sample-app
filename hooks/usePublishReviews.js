@@ -21,7 +21,7 @@ export const usePublishReviews = () => {
             ...reviewMetafield.value,
             state: "published",
           }),
-          valueType: reviewMetafield.valueType,
+          type: reviewMetafield.type,
         },
       });
     },

@@ -33,7 +33,7 @@ export const addReview = async (client, payload) => {
             key: review.id,
             namespace: METAFIELD_NAMESPACE.privateReviews,
             value: JSON.stringify(review),
-            valueType: "JSON_STRING",
+            type: "json",
           },
         ],
       },
