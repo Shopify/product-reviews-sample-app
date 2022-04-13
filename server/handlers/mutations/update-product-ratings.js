@@ -28,7 +28,7 @@ export const updateProductRatings = async (client, productGid, ratings) => {
         namespace: METAFIELD_NAMESPACE.general,
         valueInput: {
           value: JSON.stringify(ratings),
-          type: "json",
+          valueType: "JSON_STRING",
         },
       },
     },
