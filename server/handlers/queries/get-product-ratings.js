@@ -13,7 +13,6 @@ const GET_PRODUCT_RATINGS = gql`
         key
         namespace
         value
-        valueType
       }
     }
   }
