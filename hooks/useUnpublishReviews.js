@@ -21,7 +21,7 @@ export const useUnpublishReviews = () => {
             ...reviewMetafield.value,
             state: "unpublished",
           }),
-          type: reviewMetafield.valueType,
+          type: reviewMetafield.type,
         },
       });
     },
