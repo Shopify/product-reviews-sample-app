@@ -46,7 +46,7 @@ Instructions are provided to show how to setup and run the various components of
 
 ## Technical Details 💻
 
-To compliment the tutorials above, we have documented additional information about how various parts of the application work.
+To complement the tutorials above, we have documented additional information about how various parts of the application work.
 
 - [Authentication](docs/technical-details/authentication.md)
 - [Data layer](docs/technical-details/data-layer.md)
