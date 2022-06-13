@@ -1,5 +1,7 @@
 # Product Reviews Sample App
 
+:warning: **WARNING** The application in the repo uses a convention that is no longer the default approach to building a Node.js application on Shopify. Use [this repo](https://github.com/Shopify/shopify-app-node) for the most up-to-date approach for structuring your Node.js Shopify application. 
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE.md)
 
 This sample app was built as a reference to show how Shopify Developer tools can be used together to create a [fully functional application](https://shopify.dev/apps/). The example we chose to showcase is an application that facilitates review creation for products in a Shopify store.
