@@ -1,6 +1,7 @@
 source_language: en
 target_languages: [cs, da, de, es, fi, fr, it, ja, ko, nb, nl, pl, pt-BR, pt-PT, sv, th, tr, vi, zh-CN, zh-TW]
 non_blocking_languages: []
+async_pr_mode: per_pr
 components:
   - name: buyer
     audience: buyer
