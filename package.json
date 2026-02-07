@@ -46,7 +46,7 @@
     "react-dom": "^16.10.1",
     "swr": "^0.5.6",
     "use-persisted-state": "^0.3.3",
-    "webpack": "^5.69.1"
+    "webpack": "^5.105.0"
   },
   "devDependencies": {
     "@babel/core": "^7.17.5",
